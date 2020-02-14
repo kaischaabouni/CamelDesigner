@@ -1,0 +1,310 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="BpmnMultiInstanceLoopCharacteristics" version="4">
+  <OBJECT>
+    <ID name="BpmnMultiInstanceLoopCharacteristics" mc="Standard.Class" uid="7f765476-18d6-11e0-9cf7-001ec947ccaf"/>
+    <PID name="activities" mc="Standard.Package" uid="7f73f20e-18d6-11e0-9cf7-001ec947ccaf"/>
+    <ATTRIBUTES>
+      <ATT name="IsActive">false</ATT>
+      <ATT name="IsMain">false</ATT>
+      <ATT name="IsElementary">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[BpmnMultiInstanceLoopCharacteristics]]></ATT>
+      <ATT name="status">0</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedAttribute">
+        <OBJECT>
+          <ID name="IsSequencial" mc="Standard.Attribute" uid="7f78b760-18d6-11e0-9cf7-001ec947ccaf"/>
+          <ATTRIBUTES>
+            <ATT name="TypeConstraint"></ATT>
+            <ATT name="Value"><![CDATA[false]]></ATT>
+            <ATT name="TargetIsClass">false</ATT>
+            <ATT name="Changeable">Read</ATT>
+            <ATT name="IsDerived">false</ATT>
+            <ATT name="IsOrdered">false</ATT>
+            <ATT name="IsUnique">false</ATT>
+            <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+            <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[IsSequencial]]></ATT>
+            <ATT name="status">0</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Type">
+              <FOREIGNID name="boolean" mc="Standard.DataType" uid="00000004-0000-0005-0000-000000000000"/>
+            </LINK>
+            <LINK relation="Extension">
+              <FOREIGNID name="Semantic" mc="Infrastructure.Stereotype" uid="aaa3daf2-4e84-11e1-9413-0022693c90c0"/>
+            </LINK>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="d355fc8b-82fc-4bec-92c9-f9e64d3cf704"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[This attribute is a flag that controls whether the Activity instances will execute sequentially or in parallel.
+
+If the multi-instance instances are set to be performed in parallel rather than sequential (the isSequential attribute set to false), then the lines of the marker will vertical.
+
+If the multi-instance instances are set to be performed in sequence rather than parallel (the isSequential attribute set to true), then the marker will be horizontal]]></ATT>
+                  <ATT name="MimeType"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="description" mc="Infrastructure.NoteType" uid="00000000-0000-3e81-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="Behavior" mc="Standard.Attribute" uid="7f78b761-18d6-11e0-9cf7-001ec947ccaf"/>
+          <ATTRIBUTES>
+            <ATT name="TypeConstraint"></ATT>
+            <ATT name="Value"><![CDATA[AllBehavior]]></ATT>
+            <ATT name="TargetIsClass">false</ATT>
+            <ATT name="Changeable">Read</ATT>
+            <ATT name="IsDerived">false</ATT>
+            <ATT name="IsOrdered">false</ATT>
+            <ATT name="IsUnique">false</ATT>
+            <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+            <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[Behavior]]></ATT>
+            <ATT name="status">0</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Type">
+              <REFOBJ>
+                <ID name="MultiInstanceBehavior" mc="Standard.Enumeration" uid="7f765475-18d6-11e0-9cf7-001ec947ccaf"/>
+              </REFOBJ>
+            </LINK>
+            <LINK relation="Extension">
+              <FOREIGNID name="Semantic" mc="Infrastructure.Stereotype" uid="aaa3daf2-4e84-11e1-9413-0022693c90c0"/>
+            </LINK>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="577fe599-1e06-451e-8ce0-8061b9ce3cca"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[The attribute behavior acts as a shortcut for specifying when events SHALL be thrown from an Activity instance that is about to complete. It can assume values of None, One, All, and Complex, resulting in the following behavior:
+? None: the EventDefinition which is associated through the noneEvent association will be thrown for each instance completing;
+? One: the EventDefinition referenced through the oneEvent association will be thrown upon the first instance completing;
+? All: no Event is ever thrown; a token is produced after completion of all instances
+? Complex: the complexBehaviorDefinitions are consulted to determine if and which Events to throw.
+
+For the behaviors of none and one, a default SignalEventDefinition will be thrown which automatically carries the current runtime attributes of the MI Activity.
+
+Any thrown Events can be caught by boundary Events on the MultiInstance Activity.]]></ATT>
+                  <ATT name="MimeType"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="description" mc="Infrastructure.NoteType" uid="00000000-0000-3e81-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="LoopCardinality" mc="Standard.Attribute" uid="7f78b7b3-18d6-11e0-9cf7-001ec947ccaf"/>
+          <ATTRIBUTES>
+            <ATT name="TypeConstraint"></ATT>
+            <ATT name="Value"><![CDATA[""]]></ATT>
+            <ATT name="TargetIsClass">false</ATT>
+            <ATT name="Changeable">Read</ATT>
+            <ATT name="IsDerived">false</ATT>
+            <ATT name="IsOrdered">false</ATT>
+            <ATT name="IsUnique">false</ATT>
+            <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+            <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[LoopCardinality]]></ATT>
+            <ATT name="status">0</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Type">
+              <FOREIGNID name="string" mc="Standard.DataType" uid="00000004-0000-000d-0000-000000000000"/>
+            </LINK>
+            <LINK relation="Extension">
+              <FOREIGNID name="Semantic" mc="Infrastructure.Stereotype" uid="aaa3daf2-4e84-11e1-9413-0022693c90c0"/>
+            </LINK>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="b305e08d-3b4c-4c7b-919a-021469c2b3c4"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[A numeric Expression that controls the number of Activity instances that will be created. This Expression MUST evaluate to an integer.
+This MAY be underspecified, meaning that the modeler MAY simply document the condition. In such a case the loop cannot be formally executed.
+
+In order to initialize a valid multi-instance, either the loopCardinality Expression or the loopDataInput MUST be specified.]]></ATT>
+                  <ATT name="MimeType"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="description" mc="Infrastructure.NoteType" uid="00000000-0000-3e81-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="CompletionCondition" mc="Standard.Attribute" uid="7f78b7b4-18d6-11e0-9cf7-001ec947ccaf"/>
+          <ATTRIBUTES>
+            <ATT name="TypeConstraint"></ATT>
+            <ATT name="Value"><![CDATA[""]]></ATT>
+            <ATT name="TargetIsClass">false</ATT>
+            <ATT name="Changeable">Read</ATT>
+            <ATT name="IsDerived">false</ATT>
+            <ATT name="IsOrdered">false</ATT>
+            <ATT name="IsUnique">false</ATT>
+            <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+            <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[CompletionCondition]]></ATT>
+            <ATT name="status">0</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Type">
+              <FOREIGNID name="string" mc="Standard.DataType" uid="00000004-0000-000d-0000-000000000000"/>
+            </LINK>
+            <LINK relation="Extension">
+              <FOREIGNID name="Semantic" mc="Infrastructure.Stereotype" uid="aaa3daf2-4e84-11e1-9413-0022693c90c0"/>
+            </LINK>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="a3f082ae-9f63-41af-81ca-8ce4d71d36b4"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[This attribute defines a boolean Expression that when evaluated to true, cancels the remaining Activity instances and produces a token.]]></ATT>
+                  <ATT name="MimeType"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="description" mc="Infrastructure.NoteType" uid="00000000-0000-3e81-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+      <COMP relation="OwnedEnd">
+        <REFOBJ>
+          <ID name="LoopDataInput" mc="Standard.AssociationEnd" uid="7f78b7b1-18d6-11e0-9cf7-001ec947ccaf"/>
+        </REFOBJ>
+        <REFOBJ>
+          <ID name="LoopDataOutputRef" mc="Standard.AssociationEnd" uid="7f78b7b2-18d6-11e0-9cf7-001ec947ccaf"/>
+        </REFOBJ>
+        <REFOBJ>
+          <ID name="CompletionEventRef" mc="Standard.AssociationEnd" uid="7f78b7b5-18d6-11e0-9cf7-001ec947ccaf"/>
+        </REFOBJ>
+        <OBJECT>
+          <ID name="ComplexBehaviorDefinition" mc="Standard.AssociationEnd" uid="7f78b795-18d6-11e0-9cf7-001ec947ccaf"/>
+          <ATTRIBUTES>
+            <ATT name="Aggregation">KindIsComposition</ATT>
+            <ATT name="IsChangeable">true</ATT>
+            <ATT name="Changeable">Read</ATT>
+            <ATT name="IsDerived">false</ATT>
+            <ATT name="IsOrdered">false</ATT>
+            <ATT name="IsUnique">false</ATT>
+            <ATT name="MultiplicityMin"><![CDATA[0]]></ATT>
+            <ATT name="MultiplicityMax"><![CDATA[*]]></ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[ComplexBehaviorDefinition]]></ATT>
+            <ATT name="status">0</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Target">
+              <ID name="BpmnComplexBehaviorDefinition" mc="Standard.Class" uid="7f76548d-18d6-11e0-9cf7-001ec947ccaf"/>
+            </LINK>
+            <COMP relation="Opposite">
+              <OBJECT>
+                <ID name="Owner" mc="Standard.AssociationEnd" uid="7f78b793-18d6-11e0-9cf7-001ec947ccaf"/>
+                <ATTRIBUTES>
+                  <ATT name="Aggregation">KindIsAssociation</ATT>
+                  <ATT name="IsChangeable">true</ATT>
+                  <ATT name="Changeable">Read</ATT>
+                  <ATT name="IsDerived">false</ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="Visibility">Public</ATT>
+                  <ATT name="IsClass">false</ATT>
+                  <ATT name="IsAbstract">false</ATT>
+                  <ATT name="Name"><![CDATA[Owner]]></ATT>
+                  <ATT name="status">0</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Target">
+                    <ID name="BpmnMultiInstanceLoopCharacteristics" mc="Standard.Class" uid="7f765476-18d6-11e0-9cf7-001ec947ccaf"/>
+                  </LINK>
+                  <COMP relation="Opposite">
+                    <COMPID name="ComplexBehaviorDefinition" mc="Standard.AssociationEnd" uid="7f78b795-18d6-11e0-9cf7-001ec947ccaf"/>
+                  </COMP>
+                  <COMP relation="Association">
+                    <OBJECT>
+                      <ID name="" mc="Standard.Association" uid="d2a577cf-406c-4895-9b94-d4f39f53c24a"/>
+                      <ATTRIBUTES>
+                        <ATT name="Name"></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES></DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                  <LINK relation="Extension">
+                    <FOREIGNID name="Semantic" mc="Infrastructure.Stereotype" uid="53371e1a-4b4c-11e1-90df-0022693c90c0"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Association">
+              <COMPID name="" mc="Standard.Association" uid="d2a577cf-406c-4895-9b94-d4f39f53c24a"/>
+            </COMP>
+            <LINK relation="Extension">
+              <FOREIGNID name="Semantic" mc="Infrastructure.Stereotype" uid="53371e1a-4b4c-11e1-90df-0022693c90c0"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+      <COMP relation="Parent">
+        <OBJECT>
+          <ID name="Generalization" mc="Standard.Generalization" uid="7f78b762-18d6-11e0-9cf7-001ec947ccaf"/>
+          <ATTRIBUTES>
+            <ATT name="Discriminator"></ATT>
+            <ATT name="Name"><![CDATA[Generalization]]></ATT>
+            <ATT name="status">0</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="SuperType">
+              <ID name="BpmnLoopCharacteristics" mc="Standard.Class" uid="7f76548e-18d6-11e0-9cf7-001ec947ccaf"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+      <LINK relation="Extension">
+        <FOREIGNID name="Semantic" mc="Infrastructure.Stereotype" uid="d52bc425-48e4-11e1-a098-0022693c90c0"/>
+      </LINK>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

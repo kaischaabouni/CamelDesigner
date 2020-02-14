@@ -1,0 +1,237 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="audit" version="4">
+  <OBJECT>
+    <ID name="audit" mc="Standard.Package" uid="db0412ed-6438-11e0-b650-001ec947cd2a"/>
+    <PID name="modelio" mc="Standard.Package" uid="9c5a6574-7ae0-11e0-ac17-001ec947cd2a"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[audit]]></ATT>
+      <ATT name="status">0</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="AuditDiagnostic" mc="Standard.Class" uid="00d00158-0001-5d0f-0000-000000000000"/>
+        <COMPID name="AuditEntry" mc="Standard.Class" uid="00d00158-0001-5d1b-0000-000000000000"/>
+        <COMPID name="AuditEntryIterator" mc="Standard.Class" uid="00d00158-0001-5d55-0000-000000000000"/>
+        <COMPID name="AuditRule" mc="Standard.Class" uid="00d00158-0001-5d3f-0000-000000000000"/>
+        <OBJECT>
+          <ID name="AuditSeverity" mc="Standard.Enumeration" uid="00d00158-0001-5d7c-0000-000000000000"/>
+          <ATTRIBUTES>
+            <ATT name="IsElementary">true</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="IsLeaf">true</ATT>
+            <ATT name="IsRoot">false</ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="Name"><![CDATA[AuditSeverity]]></ATT>
+            <ATT name="status">0</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Value">
+              <OBJECT>
+                <ID name="AuditSuccess" mc="Standard.EnumerationLiteral" uid="18f86801-b80a-11de-af68-001ec947cd2a"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[AuditSuccess]]></ATT>
+                  <ATT name="status">0</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="Descriptor">
+                    <OBJECT>
+                      <ID name="Note" mc="Infrastructure.Note" uid="64dab483-90bd-11df-9154-001ec947cd2a"/>
+                      <ATTRIBUTES>
+                        <ATT name="Content"><![CDATA[Reports a successful audit.
+@joni-public]]></ATT>
+                        <ATT name="MimeType"></ATT>
+                        <ATT name="Name"><![CDATA[Note]]></ATT>
+                        <ATT name="status">0</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES>
+                        <LINK relation="Model">
+                          <FOREIGNID name="description" mc="Infrastructure.NoteType" uid="00000000-0000-3e81-0000-000000000000"/>
+                        </LINK>
+                      </DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="AuditInfo" mc="Standard.EnumerationLiteral" uid="18faca4c-b80a-11de-af68-001ec947cd2a"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[AuditInfo]]></ATT>
+                  <ATT name="status">0</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="Descriptor">
+                    <OBJECT>
+                      <ID name="Note" mc="Infrastructure.Note" uid="64dab484-90bd-11df-9154-001ec947cd2a"/>
+                      <ATTRIBUTES>
+                        <ATT name="Content"><![CDATA[Reports a 'tip' information.
+@joni-public]]></ATT>
+                        <ATT name="MimeType"></ATT>
+                        <ATT name="Name"><![CDATA[Note]]></ATT>
+                        <ATT name="status">0</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES>
+                        <LINK relation="Model">
+                          <FOREIGNID name="description" mc="Infrastructure.NoteType" uid="00000000-0000-3e81-0000-000000000000"/>
+                        </LINK>
+                      </DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="AuditWarning" mc="Standard.EnumerationLiteral" uid="18faca52-b80a-11de-af68-001ec947cd2a"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[AuditWarning]]></ATT>
+                  <ATT name="status">0</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="Descriptor">
+                    <OBJECT>
+                      <ID name="Note" mc="Infrastructure.Note" uid="64dd16d5-90bd-11df-9154-001ec947cd2a"/>
+                      <ATTRIBUTES>
+                        <ATT name="Content"><![CDATA[Reports a warning. A warning means that the model, although correct, does not follow the recommended best-pratices.
+@joni-public]]></ATT>
+                        <ATT name="MimeType"></ATT>
+                        <ATT name="Name"><![CDATA[Note]]></ATT>
+                        <ATT name="status">0</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES>
+                        <LINK relation="Model">
+                          <FOREIGNID name="description" mc="Infrastructure.NoteType" uid="00000000-0000-3e81-0000-000000000000"/>
+                        </LINK>
+                      </DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="AuditError" mc="Standard.EnumerationLiteral" uid="18faca58-b80a-11de-af68-001ec947cd2a"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[AuditError]]></ATT>
+                  <ATT name="status">0</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="Descriptor">
+                    <OBJECT>
+                      <ID name="Note" mc="Infrastructure.Note" uid="64dd16d6-90bd-11df-9154-001ec947cd2a"/>
+                      <ATTRIBUTES>
+                        <ATT name="Content"><![CDATA[Reports an error. An error means that the model is wrong in the Objecteering understanding of a model correctness. However, this error is not immediately preventing the use of the tool and the model.
+@joni-public]]></ATT>
+                        <ATT name="MimeType"></ATT>
+                        <ATT name="Name"><![CDATA[Note]]></ATT>
+                        <ATT name="status">0</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES>
+                        <LINK relation="Model">
+                          <FOREIGNID name="description" mc="Infrastructure.NoteType" uid="00000000-0000-3e81-0000-000000000000"/>
+                        </LINK>
+                      </DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="AuditBlock" mc="Standard.EnumerationLiteral" uid="18faca5e-b80a-11de-af68-001ec947cd2a"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[AuditBlock]]></ATT>
+                  <ATT name="status">0</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="Descriptor">
+                    <OBJECT>
+                      <ID name="Note" mc="Infrastructure.Note" uid="64dd16d7-90bd-11df-9154-001ec947cd2a"/>
+                      <ATTRIBUTES>
+                        <ATT name="Content"><![CDATA[Reports a blocking error. Blocking errors are 'forbidden', the operation being carried out will be aborted as the blocking error would prevent further use of the tool.
+@joni-public]]></ATT>
+                        <ATT name="MimeType"></ATT>
+                        <ATT name="Name"><![CDATA[Note]]></ATT>
+                        <ATT name="status">0</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES>
+                        <LINK relation="Model">
+                          <FOREIGNID name="description" mc="Infrastructure.NoteType" uid="00000000-0000-3e81-0000-000000000000"/>
+                        </LINK>
+                      </DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="AuditFatal" mc="Standard.EnumerationLiteral" uid="18fd2ca5-b80a-11de-af68-001ec947cd2a"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[AuditFatal]]></ATT>
+                  <ATT name="status">0</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="Descriptor">
+                    <OBJECT>
+                      <ID name="Note" mc="Infrastructure.Note" uid="64dd16d8-90bd-11df-9154-001ec947cd2a"/>
+                      <ATTRIBUTES>
+                        <ATT name="Content"><![CDATA[Reports an internal fatal error of the audit.
+@joni-public]]></ATT>
+                        <ATT name="MimeType"></ATT>
+                        <ATT name="Name"><![CDATA[Note]]></ATT>
+                        <ATT name="status">0</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES>
+                        <LINK relation="Model">
+                          <FOREIGNID name="description" mc="Infrastructure.NoteType" uid="00000000-0000-3e81-0000-000000000000"/>
+                        </LINK>
+                      </DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <LINK relation="Extension">
+              <FOREIGNID name="JavaEnumeration" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0262-0000-000000000000"/>
+            </LINK>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="Note" mc="Infrastructure.Note" uid="64dab482-90bd-11df-9154-001ec947cd2a"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[This enumeration lists the severity level that can be reported by the audit when checking a rule.
+
+@joni-public]]></ATT>
+                  <ATT name="MimeType"></ATT>
+                  <ATT name="Name"><![CDATA[Note]]></ATT>
+                  <ATT name="status">0</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="description" mc="Infrastructure.NoteType" uid="00000000-0000-3e81-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <COMPID name="IAuditService" mc="Standard.Interface" uid="4be0dc32-6bf5-11e0-a371-001ec947cd2a"/>
+      </COMP>
+      <LINK relation="Extension">
+        <FOREIGNID name="JavaPackage" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>
+      </LINK>
+      <COMP relation="Descriptor">
+        <OBJECT>
+          <ID name="Note" mc="Infrastructure.Note" uid="6c14e07b-7ae7-11e0-ac17-001ec947cd2a"/>
+          <ATTRIBUTES>
+            <ATT name="Content"><![CDATA[Audit services]]></ATT>
+            <ATT name="MimeType"></ATT>
+            <ATT name="Name"><![CDATA[Note]]></ATT>
+            <ATT name="status">0</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Model">
+              <FOREIGNID name="description" mc="Infrastructure.NoteType" uid="00000000-0000-3e81-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

@@ -1,0 +1,214 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="gproject" version="4">
+  <OBJECT>
+    <ID name="gproject" mc="Standard.Package" uid="0013ae8e-3501-1fc6-b42e-001ec947cd2a"/>
+    <PID name="org.modelio.gproject" mc="Standard.Package" uid="a8898049-8ed4-11e1-be7e-001ec947ccaf"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[gproject]]></ATT>
+      <ATT name="status">0</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedBehavior">
+        <COMPID name="GProject State Machine" mc="Standard.StateMachine" uid="3bf3a3a9-d4bf-11e1-8ff1-002564c97630"/>
+      </COMP>
+      <COMP relation="OwnedElement">
+        <COMPID name="AuthResolver" mc="Standard.Class" uid="a87c8968-5e12-413d-b08b-04190d448592"/>
+        <COMPID name="FragmentConflictException" mc="Standard.Class" uid="fe631048-4d8c-4c21-8402-26edb092c6dc"/>
+        <COMPID name="GProject" mc="Standard.Class" uid="b29f8656-8ed4-11e1-be7e-001ec947ccaf"/>
+        <COMPID name="GProjectAuthenticationException" mc="Standard.Class" uid="50f3b145-72b9-4853-8201-5e33b2c9023b"/>
+        <COMPID name="GProjectConfigurer" mc="Standard.Class" uid="ec2c8fb7-cc48-46d2-82ee-fe56b40646ce"/>
+        <COMPID name="GProjectCreator" mc="Standard.Class" uid="2d913552-ab32-11e1-8392-001ec947ccaf"/>
+        <COMPID name="GProjectEnvironment" mc="Standard.Class" uid="db52247a-2d91-40d3-b0ab-7d23d65db1a6"/>
+        <COMPID name="GProjectEvent" mc="Standard.Class" uid="8e7a0917-08b2-11e2-b193-001ec947ccaf"/>
+        <OBJECT>
+          <ID name="GProjectEventType" mc="Standard.Enumeration" uid="954b3423-08b2-11e2-b193-001ec947ccaf"/>
+          <ATTRIBUTES>
+            <ATT name="IsElementary">true</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="IsLeaf">true</ATT>
+            <ATT name="IsRoot">false</ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="Name"><![CDATA[GProjectEventType]]></ATT>
+            <ATT name="status">0</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Value">
+              <OBJECT>
+                <ID name="FRAGMENT_DOWN" mc="Standard.EnumerationLiteral" uid="6181ee50-08b6-11e2-b193-001ec947ccaf"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[FRAGMENT_DOWN]]></ATT>
+                  <ATT name="status">0</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="Descriptor">
+                    <OBJECT>
+                      <ID name="Note" mc="Infrastructure.Note" uid="6181ee51-08b6-11e2-b193-001ec947ccaf"/>
+                      <ATTRIBUTES>
+                        <ATT name="Content"><![CDATA[A fragment has gone down.
+The event message and/or exception will be filled.]]></ATT>
+                        <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                        <ATT name="Name"><![CDATA[Note]]></ATT>
+                        <ATT name="status">0</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES>
+                        <LINK relation="Model">
+                          <FOREIGNID name="description" mc="Infrastructure.NoteType" uid="00000000-0000-3e81-0000-000000000000"/>
+                        </LINK>
+                      </DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="WARNING" mc="Standard.EnumerationLiteral" uid="6181ee52-08b6-11e2-b193-001ec947ccaf"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[WARNING]]></ATT>
+                  <ATT name="status">0</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="Descriptor">
+                    <OBJECT>
+                      <ID name="Note" mc="Infrastructure.Note" uid="6181ee53-08b6-11e2-b193-001ec947ccaf"/>
+                      <ATTRIBUTES>
+                        <ATT name="Content"><![CDATA[A warning event.
+The event message and/or exception will be filled.
+The fragment may be filled.]]></ATT>
+                        <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                        <ATT name="Name"><![CDATA[Note]]></ATT>
+                        <ATT name="status">0</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES>
+                        <LINK relation="Model">
+                          <FOREIGNID name="description" mc="Infrastructure.NoteType" uid="00000000-0000-3e81-0000-000000000000"/>
+                        </LINK>
+                      </DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="FRAGMENT_ADDED" mc="Standard.EnumerationLiteral" uid="55dbdb80-de64-43c3-b28e-eda158fa75aa"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[FRAGMENT_ADDED]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="Descriptor">
+                    <OBJECT>
+                      <ID name="" mc="Infrastructure.Note" uid="bb3eea16-872d-4ddc-816c-3f171173e54a"/>
+                      <ATTRIBUTES>
+                        <ATT name="Content"><![CDATA[A new fragment was added.
+<p>
+The fragment may be mounted or not (mount may fail).]]></ATT>
+                        <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                        <ATT name="Name"></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES>
+                        <LINK relation="Model">
+                          <FOREIGNID name="description" mc="Infrastructure.NoteType" uid="00000000-0000-3e81-0000-000000000000"/>
+                        </LINK>
+                      </DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="FRAGMENT_REMOVED" mc="Standard.EnumerationLiteral" uid="1ed81992-02c6-4c46-93e1-1b1537630e8c"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[FRAGMENT_REMOVED]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="Descriptor">
+                    <OBJECT>
+                      <ID name="" mc="Infrastructure.Note" uid="902fcce4-cdee-4eef-8045-67a9d591d431"/>
+                      <ATTRIBUTES>
+                        <ATT name="Content"><![CDATA[A fragment was removed from the project.]]></ATT>
+                        <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                        <ATT name="Name"></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES>
+                        <LINK relation="Model">
+                          <FOREIGNID name="description" mc="Infrastructure.NoteType" uid="00000000-0000-3e81-0000-000000000000"/>
+                        </LINK>
+                      </DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="FRAGMENT_STATE_CHANGED" mc="Standard.EnumerationLiteral" uid="2e538ade-3fee-48b1-8192-0f42dd51be28"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[FRAGMENT_STATE_CHANGED]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="Descriptor">
+                    <OBJECT>
+                      <ID name="" mc="Infrastructure.Note" uid="9bf2d535-a9a4-482a-bf6e-f71d8f35cbb3"/>
+                      <ATTRIBUTES>
+                        <ATT name="Content"><![CDATA[A fragment state has changed.
+<p>
+Ifthe fragment went DOWN, a FRAGMENT_DOWN event is fired instead.]]></ATT>
+                        <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                        <ATT name="Name"></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES>
+                        <LINK relation="Model">
+                          <FOREIGNID name="description" mc="Infrastructure.NoteType" uid="00000000-0000-3e81-0000-000000000000"/>
+                        </LINK>
+                      </DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <LINK relation="Extension">
+              <FOREIGNID name="JavaEnumeration" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0262-0000-000000000000"/>
+            </LINK>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="Note" mc="Infrastructure.Note" uid="6181ee4f-08b6-11e2-b193-001ec947ccaf"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[Project event type.]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"><![CDATA[Note]]></ATT>
+                  <ATT name="status">0</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="description" mc="Infrastructure.NoteType" uid="00000000-0000-3e81-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <COMPID name="GProjectFactory" mc="Standard.Class" uid="004d0788-3511-1fc6-b42e-001ec947cd2a"/>
+        <COMPID name="GProjectLockedException" mc="Standard.Class" uid="3dc2e5fc-0551-4e16-9788-07abd236d647"/>
+        <COMPID name="GProjectMonitorSupport" mc="Standard.Class" uid="3d53b0fa-08b3-11e2-b193-001ec947ccaf"/>
+        <COMPID name="IProjectFactory" mc="Standard.Interface" uid="953ae04e-0e30-11e2-8e4b-001ec947ccaf"/>
+        <COMPID name="IGProjectEnv" mc="Standard.Interface" uid="69607556-01e8-413f-a069-b95cd88a109b"/>
+        <COMPID name="IProjectMonitor" mc="Standard.Interface" uid="89539f7a-08b2-11e2-b193-001ec947ccaf"/>
+        <COMPID name="ProjectWriter" mc="Standard.Class" uid="d24b1ab1-99bb-11e1-ac83-001ec947ccaf"/>
+        <COMPID name="TodoActionsRunner" mc="Standard.Class" uid="b0456a4d-7b5e-41bc-a1fd-729576106f18"/>
+        <COMPID name="lock" mc="Standard.Package" uid="fef36592-3b66-44b9-9d8f-a74e7677d3a1"/>
+        <COMPID name="remote" mc="Standard.Package" uid="66f4179d-4956-4d8a-967e-c4179c5565dd"/>
+        <COMPID name="url" mc="Standard.Package" uid="659ce5dc-0bab-11e2-bed6-001ec947ccaf"/>
+        <COMPID name="migration" mc="Standard.Package" uid="287aaa50-10aa-4a09-b45a-4875a2e43510"/>
+        <COMPID name="GProblem" mc="Standard.Class" uid="9f29b0fe-52a0-461a-b02c-7721677082f4"/>
+      </COMP>
+      <LINK relation="Extension">
+        <FOREIGNID name="JavaPackage" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>
+      </LINK>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

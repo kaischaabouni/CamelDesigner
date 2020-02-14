@@ -1,0 +1,70 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Substitution" version="4">
+  <OBJECT>
+    <ID name="Substitution" mc="Standard.Class" uid="0008152c-0000-1bb3-0000-000000000000"/>
+    <PID name="infrastructure" mc="Standard.Package" uid="b726b089-87a8-440d-b747-6b8e5ffd4d8d"/>
+    <ATTRIBUTES>
+      <ATT name="IsActive">false</ATT>
+      <ATT name="IsMain">false</ATT>
+      <ATT name="IsElementary">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[Substitution]]></ATT>
+      <ATT name="status">0</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedEnd">
+        <REFOBJ>
+          <ID name="Contract" mc="Standard.AssociationEnd" uid="0008152c-0000-1da7-0000-000000000000"/>
+        </REFOBJ>
+        <REFOBJ>
+          <ID name="SubstitutingClassifier" mc="Standard.AssociationEnd" uid="0008152c-0000-1d9f-0000-000000000000"/>
+        </REFOBJ>
+      </COMP>
+      <COMP relation="Parent">
+        <OBJECT>
+          <ID name="Generalization" mc="Standard.Generalization" uid="0008152c-0000-1bc2-0000-000000000000"/>
+          <ATTRIBUTES>
+            <ATT name="Discriminator"></ATT>
+            <ATT name="Name"><![CDATA[Generalization]]></ATT>
+            <ATT name="status">0</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="SuperType">
+              <ID name="UmlModelElement" mc="Standard.Class" uid="0148033c-0000-0ca8-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+      <LINK relation="Extension">
+        <FOREIGNID name="SemanticLinkMetaclass" mc="Infrastructure.Stereotype" uid="06612aa9-ee78-41fe-ae7c-8267a2470a39"/>
+      </LINK>
+      <COMP relation="Descriptor">
+        <OBJECT>
+          <ID name="" mc="Infrastructure.Note" uid="e782d7b5-7c31-4c89-b07b-10ad990d760c"/>
+          <ATTRIBUTES>
+            <ATT name="Content"><![CDATA[<p>A <em>Substitution</em> is a relationship between two <em>Classifiers</em>, which signifies that the substituting <em>Classifier</em> complies with the contract specified by the contract <em>Classifier</em>. This implies that <em>Instances</em> of the substituting <em>Classifier</em> are runtime substitutable where instances of the contract <em>Classifier</em> are expected.</p><p>The <em>Substitution</em> relationship denotes runtime substitutability that is not based on specialization. <em>Substitution</em>, unlike <em>specialization</em>, does not imply inheritance of structure, but only compliance of publicly available contracts. A <em>Substitution</em> like relationship is instrumental to specify runtime substitutability for domains that do not support specialization such as certain component technologies. It requires that</p>
+
+<ol>
+	<li><em>Interfaces</em> implemented by the contract <em>Classifier</em> are also implemented by the substituting Classifier, or else the substituting Classifier implements a more specialized <em>Interface</em> type.</li>
+	<li>that&nbsp;any <em>Port</em> owned by the contract <em>Classifier</em> has a matching <em>Port</em> (see <em>Ports</em>) owned by the substituting <em>Classifier</em>.</li>
+</ol>
+
+<p>In Modelio, contrary to UML 2.0, <em>Substitution</em> derives from <em>ModelElement</em>. A <em>Substitution</em> is owned by its substituting <em>Classifier</em>.</p>
+]]></ATT>
+            <ATT name="MimeType"></ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Model">
+              <FOREIGNID name="description" mc="Infrastructure.NoteType" uid="00000000-0000-3e81-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

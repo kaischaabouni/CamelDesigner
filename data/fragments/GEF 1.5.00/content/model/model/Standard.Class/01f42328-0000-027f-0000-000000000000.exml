@@ -1,0 +1,78 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="CompoundDirectedGraphLayout" version="4">
+  <OBJECT>
+    <ID name="CompoundDirectedGraphLayout" mc="Standard.Class" uid="01f42328-0000-027f-0000-000000000000"/>
+    <PID name="graph" mc="Standard.Package" uid="01f42328-0000-001c-0000-000000000000"/>
+    <ATTRIBUTES>
+      <ATT name="IsActive">false</ATT>
+      <ATT name="IsMain">false</ATT>
+      <ATT name="IsElementary">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">true</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[CompoundDirectedGraphLayout]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="Parent">
+        <OBJECT>
+          <ID name="" mc="Standard.Generalization" uid="b236ce7d-a826-4de4-a826-96dc636182b7"/>
+          <ATTRIBUTES>
+            <ATT name="Discriminator"></ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="SuperType">
+              <ID name="DirectedGraphLayout" mc="Standard.Class" uid="01f42328-0000-0280-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+      <LINK relation="Extension">
+        <FOREIGNID name="JavaClass" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0258-0000-000000000000"/>
+      </LINK>
+      <COMP relation="Descriptor">
+        <OBJECT>
+          <ID name="" mc="Infrastructure.Note" uid="3c238edf-b4c4-49b2-b4d6-c306e5c55a3a"/>
+          <ATTRIBUTES>
+            <ATT name="Content"><![CDATA[Performs a graph layout on a <code>CompoundDirectedGraph</code>. The input
+format is the same as for {@link DirectedGraphLayout}. All nodes, including
+subgraphs and their children, should be added to the
+{@link DirectedGraph#nodes} field.
+<P>
+The requirements for this algorithm are the same as those of
+<code>DirectedGraphLayout</code>, with the following exceptions:
+<UL>
+<LI>There is an implied edge between a subgraph and each of its member nodes.
+These edges form the containment graph <EM>T</EM>. Thus, the compound
+directed graph <EM>CG</EM> is said to be connected iff Union(<EM>G</EM>,
+<EM>T</EM>) is connected, where G represents the given nodes (including
+subgraphs) and edges.
+
+<LI>This algorithm will remove any compound cycles found in the input graph
+<em>G</em> by inverting edges according to a heuristic until no more cycles
+are found. A compound cycle is defined as: a cycle comprised of edges from
+<EM>G</EM>, <EM>T</EM>, and <em>T<SUP>-1</SUP></em>, in the form
+(c<SUP>*</SUP>e<SUP>+</SUP>p<SUP>*</SUP>e<SUP>+</SUP>)*, where
+<em>T<SUP>-1</SUP></em> is the backwards graph of <EM>T</EM>, c element of T,
+e element of G, and p element of T<SUP>-1</SUP>.
+</UL>
+
+@author Randy Hudson
+@since 2.1.2]]></ATT>
+            <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Model">
+              <FOREIGNID name="Javadoc" mc="Infrastructure.NoteType" uid="003800a8-0000-015d-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

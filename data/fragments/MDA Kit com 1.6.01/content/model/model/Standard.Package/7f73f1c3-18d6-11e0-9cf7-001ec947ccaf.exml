@@ -1,0 +1,89 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="events" version="4">
+  <OBJECT>
+    <ID name="events" mc="Standard.Package" uid="7f73f1c3-18d6-11e0-9cf7-001ec947ccaf"/>
+    <PID name="bpmn" mc="Standard.Package" uid="9730153a-0829-11e0-9123-001ec947ccaf"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[events]]></ATT>
+      <ATT name="status">0</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedPackageImport">
+        <OBJECT>
+          <ID name="PackageImport" mc="Standard.PackageImport" uid="7f7654b0-18d6-11e0-9cf7-001ec947ccaf"/>
+          <ATTRIBUTES>
+            <ATT name="Visibility">Private</ATT>
+            <ATT name="Name"><![CDATA[PackageImport]]></ATT>
+            <ATT name="status">0</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="ImportedPackage">
+              <ID name="rootElements" mc="Standard.Package" uid="7f73f20c-18d6-11e0-9cf7-001ec947ccaf"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+      <COMP relation="OwnedElement">
+        <COMPID name="BpmnBoundaryEvent" mc="Standard.Class" uid="7f76546b-18d6-11e0-9cf7-001ec947ccaf"/>
+        <COMPID name="BpmnCancelEventDefinition" mc="Standard.Class" uid="7f76546c-18d6-11e0-9cf7-001ec947ccaf"/>
+        <COMPID name="BpmnCatchEvent" mc="Standard.Class" uid="7f76546d-18d6-11e0-9cf7-001ec947ccaf"/>
+        <COMPID name="BpmnCompensateEventDefinition" mc="Standard.Class" uid="7f76549f-18d6-11e0-9cf7-001ec947ccaf"/>
+        <COMPID name="BpmnConditionalEventDefinition" mc="Standard.Class" uid="7f7654a0-18d6-11e0-9cf7-001ec947ccaf"/>
+        <COMPID name="BpmnEndEvent" mc="Standard.Class" uid="7f7654a1-18d6-11e0-9cf7-001ec947ccaf"/>
+        <COMPID name="BpmnErrorEventDefinition" mc="Standard.Class" uid="7f7654a2-18d6-11e0-9cf7-001ec947ccaf"/>
+        <COMPID name="BpmnEscalationEventDefinition" mc="Standard.Class" uid="7f7654a3-18d6-11e0-9cf7-001ec947ccaf"/>
+        <COMPID name="BpmnEvent" mc="Standard.Class" uid="7f7654a4-18d6-11e0-9cf7-001ec947ccaf"/>
+        <COMPID name="BpmnEventDefinition" mc="Standard.Class" uid="7f7654a5-18d6-11e0-9cf7-001ec947ccaf"/>
+        <COMPID name="BpmnImplicitThrowEvent" mc="Standard.Class" uid="7f7654a6-18d6-11e0-9cf7-001ec947ccaf"/>
+        <COMPID name="BpmnIntermediateCatchEvent" mc="Standard.Class" uid="7f7654a7-18d6-11e0-9cf7-001ec947ccaf"/>
+        <COMPID name="BpmnIntermediateThrowEvent" mc="Standard.Class" uid="7f7654a8-18d6-11e0-9cf7-001ec947ccaf"/>
+        <COMPID name="BpmnLinkEventDefinition" mc="Standard.Class" uid="7f7654a9-18d6-11e0-9cf7-001ec947ccaf"/>
+        <COMPID name="BpmnMessageEventDefinition" mc="Standard.Class" uid="7f7654aa-18d6-11e0-9cf7-001ec947ccaf"/>
+        <COMPID name="BpmnSignalEventDefinition" mc="Standard.Class" uid="7f7654ab-18d6-11e0-9cf7-001ec947ccaf"/>
+        <COMPID name="BpmnStartEvent" mc="Standard.Class" uid="7f7654ac-18d6-11e0-9cf7-001ec947ccaf"/>
+        <COMPID name="BpmnTerminateEventDefinition" mc="Standard.Class" uid="7f7654ad-18d6-11e0-9cf7-001ec947ccaf"/>
+        <COMPID name="BpmnThrowEvent" mc="Standard.Class" uid="7f7654ae-18d6-11e0-9cf7-001ec947ccaf"/>
+        <COMPID name="BpmnTimerEventDefinition" mc="Standard.Class" uid="7f7654af-18d6-11e0-9cf7-001ec947ccaf"/>
+      </COMP>
+      <LINK relation="Extension">
+        <FOREIGNID name="Semantic" mc="Infrastructure.Stereotype" uid="787267f2-4b2c-11e1-90df-0022693c90c0"/>
+      </LINK>
+      <COMP relation="Descriptor">
+        <OBJECT>
+          <ID name="" mc="Infrastructure.Note" uid="d92c6a0a-0599-4cd8-8ffb-a03ddf1c0d20"/>
+          <ATTRIBUTES>
+            <ATT name="Content"><![CDATA[<p>An Event is something that &#8220;happens&#8221; during the course of a Process.</p><p>These Events affect the flow of the Process&nbsp;and usually have a cause or an impact and in general require or allow for a reaction.</p><p>The term &#8220;event&#8221; is general enough&nbsp;to cover many things in a Process. The start of an Activity, the end of an Activity, the change of state of a document,&nbsp;a Message that arrives, etc., all could be considered Events.</p><p>Events allow for the description of &#8220;event-driven&#8221; Processes. In these Processes, there are three main types of&nbsp;Events:</p>
+
+<ol>
+	<li>Start Events, which indicate where a Process will start.</li>
+	<li>End Events, which indicate where a path of a Process will end.</li>
+	<li>Intermediate Events, which indicate where something happens somewhere between the start and&nbsp;end of a Process.</li>
+</ol>
+
+<p>Within these three types, Events come in two flavors:</p>
+
+<ol>
+	<li>Events that <em>catch a trigger</em>. All Start Events and some Intermediate Events are <em>catching Events</em>.</li>
+	<li>Events that <em>throw a Result</em>. All End Events and some Intermediate Events are <em>throwing Events</em> that MAY&nbsp;eventually be <em>caught</em> by another Event. Typically the trigger carries information out of the scope where the throw&nbsp;Event occurred into the scope of the catching Events.<br />
+	The <em>throwing</em> of a <em>trigger</em> MAY be either implicit as defined&nbsp;by this standard or an extension to it or explicit by a <em>throw</em> Event.</li>
+</ol>
+]]></ATT>
+            <ATT name="MimeType"><![CDATA[text/html]]></ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Model">
+              <FOREIGNID name="description" mc="Infrastructure.NoteType" uid="00000000-0000-3e81-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

@@ -1,0 +1,159 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="MatrixDefinition" version="4">
+  <OBJECT>
+    <ID name="MatrixDefinition" mc="Standard.Class" uid="ab9e51db-3809-4565-8a6e-358a513131b3"/>
+    <PID name="matrix" mc="Standard.Package" uid="4b9cc988-a81d-480a-94a8-9f9b0c482d01"/>
+    <ATTRIBUTES>
+      <ATT name="IsActive">false</ATT>
+      <ATT name="IsMain">false</ATT>
+      <ATT name="IsElementary">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[MatrixDefinition]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedEnd">
+        <REFOBJ>
+          <ID name="LinesDefinition" mc="Standard.AssociationEnd" uid="1629bcf0-dbc8-4d37-b46d-7b1572d1db88"/>
+        </REFOBJ>
+        <REFOBJ>
+          <ID name="ColumnsDefinition" mc="Standard.AssociationEnd" uid="5596a0bb-63f4-4825-9817-f5eededc1b04"/>
+        </REFOBJ>
+        <REFOBJ>
+          <ID name="ValuesDefinition" mc="Standard.AssociationEnd" uid="62796268-3517-44b9-952d-b6dbce2eb726"/>
+        </REFOBJ>
+        <REFOBJ>
+          <ID name="DepthDefinition" mc="Standard.AssociationEnd" uid="04766632-ed4a-44b8-a3ac-03e991e27fbf"/>
+        </REFOBJ>
+        <OBJECT>
+          <ID name="Owner" mc="Standard.AssociationEnd" uid="49c42fb4-2313-40b6-94a7-70918e83025f"/>
+          <ATTRIBUTES>
+            <ATT name="Aggregation">KindIsAssociation</ATT>
+            <ATT name="IsChangeable">true</ATT>
+            <ATT name="Changeable">ReadWrite</ATT>
+            <ATT name="IsDerived">false</ATT>
+            <ATT name="IsOrdered">false</ATT>
+            <ATT name="IsUnique">false</ATT>
+            <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+            <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[Owner]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Target">
+              <ID name="ModelElement" mc="Standard.Class" uid="77b315bb-af12-4ca5-a8cf-5c4a9ed90bdb"/>
+            </LINK>
+            <COMP relation="Opposite">
+              <OBJECT>
+                <ID name="Matrix" mc="Standard.AssociationEnd" uid="f0bf7d0e-b897-4856-a7b4-38ec3f06e9d9"/>
+                <ATTRIBUTES>
+                  <ATT name="Aggregation">KindIsComposition</ATT>
+                  <ATT name="IsChangeable">true</ATT>
+                  <ATT name="Changeable">ReadWrite</ATT>
+                  <ATT name="IsDerived">false</ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[0]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[*]]></ATT>
+                  <ATT name="Visibility">Public</ATT>
+                  <ATT name="IsClass">false</ATT>
+                  <ATT name="IsAbstract">false</ATT>
+                  <ATT name="Name"><![CDATA[Matrix]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Target">
+                    <ID name="MatrixDefinition" mc="Standard.Class" uid="ab9e51db-3809-4565-8a6e-358a513131b3"/>
+                  </LINK>
+                  <COMP relation="Opposite">
+                    <COMPID name="Owner" mc="Standard.AssociationEnd" uid="49c42fb4-2313-40b6-94a7-70918e83025f"/>
+                  </COMP>
+                  <COMP relation="Association">
+                    <OBJECT>
+                      <ID name="" mc="Standard.Association" uid="f7633c70-97a5-4328-b4cd-c4497e042c3a"/>
+                      <ATTRIBUTES>
+                        <ATT name="Name"></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES></DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                  <LINK relation="Extension">
+                    <FOREIGNID name="Semantic" mc="Infrastructure.Stereotype" uid="53371e1a-4b4c-11e1-90df-0022693c90c0"/>
+                  </LINK>
+                  <COMP relation="Descriptor">
+                    <OBJECT>
+                      <ID name="" mc="Infrastructure.Note" uid="d62c26c7-bd1a-4eea-b52d-ad758725eac0"/>
+                      <ATTRIBUTES>
+                        <ATT name="Content"><![CDATA[Owned matrices.]]></ATT>
+                        <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                        <ATT name="Name"></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES>
+                        <LINK relation="Model">
+                          <FOREIGNID name="description" mc="Infrastructure.NoteType" uid="00000000-0000-3e81-0000-000000000000"/>
+                        </LINK>
+                      </DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Association">
+              <COMPID name="" mc="Standard.Association" uid="f7633c70-97a5-4328-b4cd-c4497e042c3a"/>
+            </COMP>
+            <LINK relation="Extension">
+              <FOREIGNID name="Semantic" mc="Infrastructure.Stereotype" uid="53371e1a-4b4c-11e1-90df-0022693c90c0"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+      <COMP relation="Parent">
+        <OBJECT>
+          <ID name="Generalization" mc="Standard.Generalization" uid="b1fc9250-f1e3-4067-a865-5519f827a73f"/>
+          <ATTRIBUTES>
+            <ATT name="Discriminator"></ATT>
+            <ATT name="Name"><![CDATA[Generalization]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="SuperType">
+              <ID name="ModelElement" mc="Standard.Class" uid="77b315bb-af12-4ca5-a8cf-5c4a9ed90bdb"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+      <LINK relation="Extension">
+        <FOREIGNID name="Semantic" mc="Infrastructure.Stereotype" uid="d52bc425-48e4-11e1-a098-0022693c90c0"/>
+      </LINK>
+      <COMP relation="Descriptor">
+        <OBJECT>
+          <ID name="" mc="Infrastructure.Note" uid="8ef7d637-917c-486c-95fe-2796c7e05b9f"/>
+          <ATTRIBUTES>
+            <ATT name="Content"><![CDATA[Definition of a matrix.
+
+A matrix is defined by a lines columns and the value for a line and a column.
+Line and column content are each defined by a query definition.
+The matrix values are defined by a MatrixValueDefniition.
+]]></ATT>
+            <ATT name="MimeType"></ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Model">
+              <FOREIGNID name="description" mc="Infrastructure.NoteType" uid="00000000-0000-3e81-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

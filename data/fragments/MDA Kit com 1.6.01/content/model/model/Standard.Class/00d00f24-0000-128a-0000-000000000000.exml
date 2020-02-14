@@ -1,0 +1,324 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="InformationFlow" version="4">
+  <OBJECT>
+    <ID name="InformationFlow" mc="Standard.Class" uid="00d00f24-0000-128a-0000-000000000000"/>
+    <PID name="informationFlow" mc="Standard.Package" uid="00d00f24-0000-1288-0000-000000000000"/>
+    <ATTRIBUTES>
+      <ATT name="IsActive">false</ATT>
+      <ATT name="IsMain">false</ATT>
+      <ATT name="IsElementary">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[InformationFlow]]></ATT>
+      <ATT name="status">0</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedEnd">
+        <REFOBJ>
+          <ID name="Owner" mc="Standard.AssociationEnd" uid="00d00f24-0000-12f5-0000-000000000000"/>
+        </REFOBJ>
+        <REFOBJ>
+          <ID name="InformationSource" mc="Standard.AssociationEnd" uid="00d00f24-0000-12e8-0000-000000000000"/>
+        </REFOBJ>
+        <REFOBJ>
+          <ID name="InformationTarget" mc="Standard.AssociationEnd" uid="00d00f24-0000-12dd-0000-000000000000"/>
+        </REFOBJ>
+        <OBJECT>
+          <ID name="RealizingActivityEdge" mc="Standard.AssociationEnd" uid="00d00f24-0000-12b5-0000-000000000000"/>
+          <ATTRIBUTES>
+            <ATT name="Aggregation">KindIsAssociation</ATT>
+            <ATT name="IsChangeable">true</ATT>
+            <ATT name="Changeable">ReadWrite</ATT>
+            <ATT name="IsDerived">false</ATT>
+            <ATT name="IsOrdered">false</ATT>
+            <ATT name="IsUnique">false</ATT>
+            <ATT name="MultiplicityMin"><![CDATA[0]]></ATT>
+            <ATT name="MultiplicityMax"><![CDATA[*]]></ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[RealizingActivityEdge]]></ATT>
+            <ATT name="status">0</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Target">
+              <ID name="ActivityEdge" mc="Standard.Class" uid="00d00f24-0000-094e-0000-000000000000"/>
+            </LINK>
+            <COMP relation="Opposite">
+              <OBJECT>
+                <ID name="RealizedInformationFlow" mc="Standard.AssociationEnd" uid="00d00f24-0000-12b6-0000-000000000000"/>
+                <ATTRIBUTES>
+                  <ATT name="Aggregation">KindIsAssociation</ATT>
+                  <ATT name="IsChangeable">true</ATT>
+                  <ATT name="Changeable">ReadWrite</ATT>
+                  <ATT name="IsDerived">false</ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[0]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[*]]></ATT>
+                  <ATT name="Visibility">Public</ATT>
+                  <ATT name="IsClass">false</ATT>
+                  <ATT name="IsAbstract">false</ATT>
+                  <ATT name="Name"><![CDATA[RealizedInformationFlow]]></ATT>
+                  <ATT name="status">0</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Target">
+                    <ID name="InformationFlow" mc="Standard.Class" uid="00d00f24-0000-128a-0000-000000000000"/>
+                  </LINK>
+                  <COMP relation="Opposite">
+                    <COMPID name="RealizingActivityEdge" mc="Standard.AssociationEnd" uid="00d00f24-0000-12b5-0000-000000000000"/>
+                  </COMP>
+                  <COMP relation="Association">
+                    <OBJECT>
+                      <ID name="" mc="Standard.Association" uid="8d7299ad-8698-435c-b85c-3844f5e8bed4"/>
+                      <ATTRIBUTES>
+                        <ATT name="Name"></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES></DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                  <LINK relation="Extension">
+                    <FOREIGNID name="Semantic" mc="Infrastructure.Stereotype" uid="53371e1a-4b4c-11e1-90df-0022693c90c0"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Association">
+              <COMPID name="" mc="Standard.Association" uid="8d7299ad-8698-435c-b85c-3844f5e8bed4"/>
+            </COMP>
+            <LINK relation="Extension">
+              <FOREIGNID name="Semantic" mc="Infrastructure.Stereotype" uid="53371e1a-4b4c-11e1-90df-0022693c90c0"/>
+            </LINK>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="c160d290-ace6-43d3-a57a-01926c9d532a"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[Determines which ActivityEdges will realize the specified flow.]]></ATT>
+                  <ATT name="MimeType"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="description" mc="Infrastructure.NoteType" uid="00000000-0000-3e81-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="RealizingCommunicationMessage" mc="Standard.AssociationEnd" uid="01ec00cc-0017-2de1-0000-000000000000"/>
+          <ATTRIBUTES>
+            <ATT name="Aggregation">KindIsAssociation</ATT>
+            <ATT name="IsChangeable">true</ATT>
+            <ATT name="Changeable">ReadWrite</ATT>
+            <ATT name="IsDerived">false</ATT>
+            <ATT name="IsOrdered">false</ATT>
+            <ATT name="IsUnique">false</ATT>
+            <ATT name="MultiplicityMin"><![CDATA[0]]></ATT>
+            <ATT name="MultiplicityMax"><![CDATA[*]]></ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[RealizingCommunicationMessage]]></ATT>
+            <ATT name="status">0</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Target">
+              <ID name="CommunicationMessage" mc="Standard.Class" uid="01ec00cc-0017-2da0-0000-000000000000"/>
+            </LINK>
+            <COMP relation="Opposite">
+              <OBJECT>
+                <ID name="RealizedInformationFlow" mc="Standard.AssociationEnd" uid="01ec00cc-0017-2dda-0000-000000000000"/>
+                <ATTRIBUTES>
+                  <ATT name="Aggregation">KindIsAssociation</ATT>
+                  <ATT name="IsChangeable">true</ATT>
+                  <ATT name="Changeable">ReadWrite</ATT>
+                  <ATT name="IsDerived">false</ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[0]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[*]]></ATT>
+                  <ATT name="Visibility">Public</ATT>
+                  <ATT name="IsClass">false</ATT>
+                  <ATT name="IsAbstract">false</ATT>
+                  <ATT name="Name"><![CDATA[RealizedInformationFlow]]></ATT>
+                  <ATT name="status">0</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Target">
+                    <ID name="InformationFlow" mc="Standard.Class" uid="00d00f24-0000-128a-0000-000000000000"/>
+                  </LINK>
+                  <COMP relation="Opposite">
+                    <COMPID name="RealizingCommunicationMessage" mc="Standard.AssociationEnd" uid="01ec00cc-0017-2de1-0000-000000000000"/>
+                  </COMP>
+                  <COMP relation="Association">
+                    <OBJECT>
+                      <ID name="" mc="Standard.Association" uid="dd7b491b-0f19-48cd-8126-c16fc17ffed1"/>
+                      <ATTRIBUTES>
+                        <ATT name="Name"></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES></DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                  <LINK relation="Extension">
+                    <FOREIGNID name="Semantic" mc="Infrastructure.Stereotype" uid="53371e1a-4b4c-11e1-90df-0022693c90c0"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Association">
+              <COMPID name="" mc="Standard.Association" uid="dd7b491b-0f19-48cd-8126-c16fc17ffed1"/>
+            </COMP>
+            <LINK relation="Extension">
+              <FOREIGNID name="Semantic" mc="Infrastructure.Stereotype" uid="53371e1a-4b4c-11e1-90df-0022693c90c0"/>
+            </LINK>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="0423cead-b76d-4364-9c93-58b8bc4a6db8"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"></ATT>
+                  <ATT name="MimeType"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="description" mc="Infrastructure.NoteType" uid="00000000-0000-3e81-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <REFOBJ>
+          <ID name="RealizingFeature" mc="Standard.AssociationEnd" uid="00d00f24-0000-12aa-0000-000000000000"/>
+        </REFOBJ>
+        <REFOBJ>
+          <ID name="RealizingLink" mc="Standard.AssociationEnd" uid="00d00f24-0000-12a0-0000-000000000000"/>
+        </REFOBJ>
+        <OBJECT>
+          <ID name="RealizingMessage" mc="Standard.AssociationEnd" uid="00d00f24-0000-12c0-0000-000000000000"/>
+          <ATTRIBUTES>
+            <ATT name="Aggregation">KindIsAssociation</ATT>
+            <ATT name="IsChangeable">true</ATT>
+            <ATT name="Changeable">ReadWrite</ATT>
+            <ATT name="IsDerived">false</ATT>
+            <ATT name="IsOrdered">false</ATT>
+            <ATT name="IsUnique">false</ATT>
+            <ATT name="MultiplicityMin"><![CDATA[0]]></ATT>
+            <ATT name="MultiplicityMax"><![CDATA[*]]></ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[RealizingMessage]]></ATT>
+            <ATT name="status">0</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Target">
+              <ID name="Message" mc="Standard.Class" uid="0148033c-0000-0cce-0000-000000000000"/>
+            </LINK>
+            <COMP relation="Opposite">
+              <OBJECT>
+                <ID name="RealizedInformationFlow" mc="Standard.AssociationEnd" uid="00d00f24-0000-12c1-0000-000000000000"/>
+                <ATTRIBUTES>
+                  <ATT name="Aggregation">KindIsAssociation</ATT>
+                  <ATT name="IsChangeable">true</ATT>
+                  <ATT name="Changeable">ReadWrite</ATT>
+                  <ATT name="IsDerived">false</ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[0]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[*]]></ATT>
+                  <ATT name="Visibility">Public</ATT>
+                  <ATT name="IsClass">false</ATT>
+                  <ATT name="IsAbstract">false</ATT>
+                  <ATT name="Name"><![CDATA[RealizedInformationFlow]]></ATT>
+                  <ATT name="status">0</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Target">
+                    <ID name="InformationFlow" mc="Standard.Class" uid="00d00f24-0000-128a-0000-000000000000"/>
+                  </LINK>
+                  <COMP relation="Opposite">
+                    <COMPID name="RealizingMessage" mc="Standard.AssociationEnd" uid="00d00f24-0000-12c0-0000-000000000000"/>
+                  </COMP>
+                  <COMP relation="Association">
+                    <OBJECT>
+                      <ID name="" mc="Standard.Association" uid="5ee093bb-45b9-4ec3-9894-e278700d9712"/>
+                      <ATTRIBUTES>
+                        <ATT name="Name"></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES></DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                  <LINK relation="Extension">
+                    <FOREIGNID name="Semantic" mc="Infrastructure.Stereotype" uid="53371e1a-4b4c-11e1-90df-0022693c90c0"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Association">
+              <COMPID name="" mc="Standard.Association" uid="5ee093bb-45b9-4ec3-9894-e278700d9712"/>
+            </COMP>
+            <LINK relation="Extension">
+              <FOREIGNID name="Semantic" mc="Infrastructure.Stereotype" uid="53371e1a-4b4c-11e1-90df-0022693c90c0"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <REFOBJ>
+          <ID name="RealizingNaryLink" mc="Standard.AssociationEnd" uid="0013b776-131a-10a1-88a0-001ec947cd2a"/>
+        </REFOBJ>
+        <REFOBJ>
+          <ID name="Conveyed" mc="Standard.AssociationEnd" uid="00d00f24-0000-12ca-0000-000000000000"/>
+        </REFOBJ>
+        <REFOBJ>
+          <ID name="Channel" mc="Standard.AssociationEnd" uid="0075a3fa-d191-1f43-b54d-001ec947cd2a"/>
+        </REFOBJ>
+      </COMP>
+      <COMP relation="Parent">
+        <OBJECT>
+          <ID name="Generalization" mc="Standard.Generalization" uid="00d00f24-0000-1292-0000-000000000000"/>
+          <ATTRIBUTES>
+            <ATT name="Discriminator"></ATT>
+            <ATT name="Name"><![CDATA[Generalization]]></ATT>
+            <ATT name="status">0</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="SuperType">
+              <ID name="UmlModelElement" mc="Standard.Class" uid="0148033c-0000-0ca8-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+      <LINK relation="Extension">
+        <FOREIGNID name="Semantic" mc="Infrastructure.Stereotype" uid="d52bc425-48e4-11e1-a098-0022693c90c0"/>
+        <FOREIGNID name="SemanticLinkMetaclass" mc="Infrastructure.Stereotype" uid="06612aa9-ee78-41fe-ae7c-8267a2470a39"/>
+      </LINK>
+      <COMP relation="Descriptor">
+        <OBJECT>
+          <ID name="" mc="Infrastructure.Note" uid="cbac3d85-f446-4f6f-9a16-2d6c18c852a9"/>
+          <ATTRIBUTES>
+            <ATT name="Content"><![CDATA[<p>An InformationFlow specifies that one or more information items circulates from its sources to its targets. Information flows require some kind of &quot;information channel&quot;&nbsp;for transmitting information items from the source to the destination.</p><p>An information channel is represented in various ways depending on the nature of its sources and targets. It may be represented by connectors, links, associations, or even dependencies. For example, if the source and destination are parts in some composite structure such as a collaboration, then the information channel is likely to be represented by a connector between them. Or, if the source and target are objects (which are a kind of InstanceSpecification), they may be represented by a link that joins the two, and so on.</p><p>The sources and targets of the information flow can only be one of the following kind: Actor, Node, UseCase, Artifact, Class, Component, Port, Attribute, AssociationEnd, Interface, Package, ActivityNode, ActivityPartition and Instance.</p>
+]]></ATT>
+            <ATT name="MimeType"></ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Model">
+              <FOREIGNID name="description" mc="Infrastructure.NoteType" uid="00000000-0000-3e81-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

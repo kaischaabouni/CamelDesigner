@@ -1,0 +1,272 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="BpmnCollaboration" version="4">
+  <OBJECT>
+    <ID name="BpmnCollaboration" mc="Standard.Class" uid="7f765494-18d6-11e0-9cf7-001ec947ccaf"/>
+    <PID name="processCollaboration" mc="Standard.Package" uid="7f73f20b-18d6-11e0-9cf7-001ec947ccaf"/>
+    <ATTRIBUTES>
+      <ATT name="IsActive">false</ATT>
+      <ATT name="IsMain">false</ATT>
+      <ATT name="IsElementary">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[BpmnCollaboration]]></ATT>
+      <ATT name="status">0</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedAttribute">
+        <OBJECT>
+          <ID name="IsClosed" mc="Standard.Attribute" uid="7f7654d8-18d6-11e0-9cf7-001ec947ccaf"/>
+          <ATTRIBUTES>
+            <ATT name="TypeConstraint"></ATT>
+            <ATT name="Value"><![CDATA[false]]></ATT>
+            <ATT name="TargetIsClass">false</ATT>
+            <ATT name="Changeable">Read</ATT>
+            <ATT name="IsDerived">false</ATT>
+            <ATT name="IsOrdered">false</ATT>
+            <ATT name="IsUnique">false</ATT>
+            <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+            <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[IsClosed]]></ATT>
+            <ATT name="status">0</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Type">
+              <FOREIGNID name="boolean" mc="Standard.DataType" uid="00000004-0000-0005-0000-000000000000"/>
+            </LINK>
+            <LINK relation="Extension">
+              <FOREIGNID name="Semantic" mc="Infrastructure.Stereotype" uid="aaa3daf2-4e84-11e1-9413-0022693c90c0"/>
+            </LINK>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="b7e57890-a4ab-49d2-9ed1-eee3152a0e35"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[A boolean value specifying whether Message Flow not modeled in the Collaboration can occur when the Collaboration is carried out.
+? If the value is true, they MAY NOT occur.
+? If the value is false, they MAY occur.]]></ATT>
+                  <ATT name="MimeType"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="description" mc="Infrastructure.NoteType" uid="00000000-0000-3e81-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+      <COMP relation="OwnedEnd">
+        <REFOBJ>
+          <ID name="Artifact" mc="Standard.AssociationEnd" uid="7f7654da-18d6-11e0-9cf7-001ec947ccaf"/>
+        </REFOBJ>
+        <OBJECT>
+          <ID name="MessageFlow" mc="Standard.AssociationEnd" uid="7f7654ca-18d6-11e0-9cf7-001ec947ccaf"/>
+          <ATTRIBUTES>
+            <ATT name="Aggregation">KindIsComposition</ATT>
+            <ATT name="IsChangeable">true</ATT>
+            <ATT name="Changeable">Read</ATT>
+            <ATT name="IsDerived">false</ATT>
+            <ATT name="IsOrdered">false</ATT>
+            <ATT name="IsUnique">false</ATT>
+            <ATT name="MultiplicityMin"><![CDATA[0]]></ATT>
+            <ATT name="MultiplicityMax"><![CDATA[*]]></ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[MessageFlow]]></ATT>
+            <ATT name="status">0</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Target">
+              <ID name="BpmnMessageFlow" mc="Standard.Class" uid="7f765490-18d6-11e0-9cf7-001ec947ccaf"/>
+            </LINK>
+            <COMP relation="Opposite">
+              <OBJECT>
+                <ID name="Collaboration" mc="Standard.AssociationEnd" uid="7f78b72b-18d6-11e0-9cf7-001ec947ccaf"/>
+                <ATTRIBUTES>
+                  <ATT name="Aggregation">KindIsAssociation</ATT>
+                  <ATT name="IsChangeable">true</ATT>
+                  <ATT name="Changeable">Read</ATT>
+                  <ATT name="IsDerived">false</ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="Visibility">Public</ATT>
+                  <ATT name="IsClass">false</ATT>
+                  <ATT name="IsAbstract">false</ATT>
+                  <ATT name="Name"><![CDATA[Collaboration]]></ATT>
+                  <ATT name="status">0</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Target">
+                    <ID name="BpmnCollaboration" mc="Standard.Class" uid="7f765494-18d6-11e0-9cf7-001ec947ccaf"/>
+                  </LINK>
+                  <COMP relation="Opposite">
+                    <COMPID name="MessageFlow" mc="Standard.AssociationEnd" uid="7f7654ca-18d6-11e0-9cf7-001ec947ccaf"/>
+                  </COMP>
+                  <COMP relation="Association">
+                    <OBJECT>
+                      <ID name="" mc="Standard.Association" uid="2cea15a7-31f6-4bd3-af52-fc7cd68f03bb"/>
+                      <ATTRIBUTES>
+                        <ATT name="Name"></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES></DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                  <LINK relation="Extension">
+                    <FOREIGNID name="Semantic" mc="Infrastructure.Stereotype" uid="53371e1a-4b4c-11e1-90df-0022693c90c0"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Association">
+              <COMPID name="" mc="Standard.Association" uid="2cea15a7-31f6-4bd3-af52-fc7cd68f03bb"/>
+            </COMP>
+            <LINK relation="Extension">
+              <FOREIGNID name="Semantic" mc="Infrastructure.Stereotype" uid="53371e1a-4b4c-11e1-90df-0022693c90c0"/>
+            </LINK>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="13bf58d1-c782-4d5d-9aef-84ff11e850f9"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[This provides the list of Message Flow that are used in the
+Collaboration.]]></ATT>
+                  <ATT name="MimeType"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="description" mc="Infrastructure.NoteType" uid="00000000-0000-3e81-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <REFOBJ>
+          <ID name="Participants" mc="Standard.AssociationEnd" uid="7f7654db-18d6-11e0-9cf7-001ec947ccaf"/>
+        </REFOBJ>
+        <OBJECT>
+          <ID name="Messages" mc="Standard.AssociationEnd" uid="848e2d4f-647f-47e7-8d31-28e3496ec4a6"/>
+          <ATTRIBUTES>
+            <ATT name="Aggregation">KindIsComposition</ATT>
+            <ATT name="IsChangeable">true</ATT>
+            <ATT name="Changeable">ReadWrite</ATT>
+            <ATT name="IsDerived">false</ATT>
+            <ATT name="IsOrdered">false</ATT>
+            <ATT name="IsUnique">false</ATT>
+            <ATT name="MultiplicityMin"><![CDATA[0]]></ATT>
+            <ATT name="MultiplicityMax"><![CDATA[*]]></ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[Messages]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Target">
+              <ID name="BpmnMessage" mc="Standard.Class" uid="7f76548f-18d6-11e0-9cf7-001ec947ccaf"/>
+            </LINK>
+            <COMP relation="Opposite">
+              <OBJECT>
+                <ID name="Collaboration" mc="Standard.AssociationEnd" uid="fedee9db-1c82-4a25-95ae-df2feee4fa77"/>
+                <ATTRIBUTES>
+                  <ATT name="Aggregation">KindIsAssociation</ATT>
+                  <ATT name="IsChangeable">true</ATT>
+                  <ATT name="Changeable">ReadWrite</ATT>
+                  <ATT name="IsDerived">false</ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[0]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="Visibility">Public</ATT>
+                  <ATT name="IsClass">false</ATT>
+                  <ATT name="IsAbstract">false</ATT>
+                  <ATT name="Name"><![CDATA[Collaboration]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Target">
+                    <ID name="BpmnCollaboration" mc="Standard.Class" uid="7f765494-18d6-11e0-9cf7-001ec947ccaf"/>
+                  </LINK>
+                  <COMP relation="Opposite">
+                    <COMPID name="Messages" mc="Standard.AssociationEnd" uid="848e2d4f-647f-47e7-8d31-28e3496ec4a6"/>
+                  </COMP>
+                  <COMP relation="Association">
+                    <OBJECT>
+                      <ID name="" mc="Standard.Association" uid="725b4c6e-b087-45ef-b96a-0657c8d262a5"/>
+                      <ATTRIBUTES>
+                        <ATT name="Name"></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES></DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                  <LINK relation="Extension">
+                    <FOREIGNID name="Semantic" mc="Infrastructure.Stereotype" uid="53371e1a-4b4c-11e1-90df-0022693c90c0"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Association">
+              <COMPID name="" mc="Standard.Association" uid="725b4c6e-b087-45ef-b96a-0657c8d262a5"/>
+            </COMP>
+            <LINK relation="Extension">
+              <FOREIGNID name="Semantic" mc="Infrastructure.Stereotype" uid="53371e1a-4b4c-11e1-90df-0022693c90c0"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <REFOBJ>
+          <ID name="DefinedProcess" mc="Standard.AssociationEnd" uid="d126f557-e50b-4085-a93e-7d2e1fbd7c30"/>
+        </REFOBJ>
+      </COMP>
+      <COMP relation="Parent">
+        <OBJECT>
+          <ID name="Generalization" mc="Standard.Generalization" uid="7f7654d9-18d6-11e0-9cf7-001ec947ccaf"/>
+          <ATTRIBUTES>
+            <ATT name="Discriminator"></ATT>
+            <ATT name="Name"><![CDATA[Generalization]]></ATT>
+            <ATT name="status">0</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="SuperType">
+              <ID name="Behavior" mc="Standard.Class" uid="0008152c-0000-1bac-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+      <LINK relation="Extension">
+        <FOREIGNID name="Semantic" mc="Infrastructure.Stereotype" uid="d52bc425-48e4-11e1-a098-0022693c90c0"/>
+      </LINK>
+      <COMP relation="Descriptor">
+        <OBJECT>
+          <ID name="" mc="Infrastructure.Note" uid="8a2b96f7-b71c-4ec7-823e-7bb4a4651b22"/>
+          <ATTRIBUTES>
+            <ATT name="Content"><![CDATA[The Collaboration package contains classes which are used for modeling Collaborations, which is a collection of Participants shown as Pools, their interactions as shown by Message Flow, and may include Processes within the Pools and/or Choreographies between the Pools.
+
+Ownership:
+Collaborations/Processes are structured under UML Packages or Classifiers or operations.]]></ATT>
+            <ATT name="MimeType"></ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Model">
+              <FOREIGNID name="description" mc="Infrastructure.NoteType" uid="00000000-0000-3e81-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

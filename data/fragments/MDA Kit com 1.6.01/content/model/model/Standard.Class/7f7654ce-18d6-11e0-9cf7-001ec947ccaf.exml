@@ -1,0 +1,107 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="BpmnGateway" version="4">
+  <OBJECT>
+    <ID name="BpmnGateway" mc="Standard.Class" uid="7f7654ce-18d6-11e0-9cf7-001ec947ccaf"/>
+    <PID name="gateways" mc="Standard.Package" uid="7f73f1c4-18d6-11e0-9cf7-001ec947ccaf"/>
+    <ATTRIBUTES>
+      <ATT name="IsActive">false</ATT>
+      <ATT name="IsMain">false</ATT>
+      <ATT name="IsElementary">false</ATT>
+      <ATT name="IsAbstract">true</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[BpmnGateway]]></ATT>
+      <ATT name="status">0</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedAttribute">
+        <OBJECT>
+          <ID name="GatewayDirection" mc="Standard.Attribute" uid="7f78b82a-18d6-11e0-9cf7-001ec947ccaf"/>
+          <ATTRIBUTES>
+            <ATT name="TypeConstraint"></ATT>
+            <ATT name="Value"><![CDATA[BpmnGatewayDirection.UnspecifiedDirection]]></ATT>
+            <ATT name="TargetIsClass">false</ATT>
+            <ATT name="Changeable">Read</ATT>
+            <ATT name="IsDerived">false</ATT>
+            <ATT name="IsOrdered">false</ATT>
+            <ATT name="IsUnique">false</ATT>
+            <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+            <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[GatewayDirection]]></ATT>
+            <ATT name="status">0</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Type">
+              <REFOBJ>
+                <ID name="BpmnGatewayDirection" mc="Standard.Enumeration" uid="7f7654cf-18d6-11e0-9cf7-001ec947ccaf"/>
+              </REFOBJ>
+            </LINK>
+            <LINK relation="Extension">
+              <FOREIGNID name="Semantic" mc="Infrastructure.Stereotype" uid="aaa3daf2-4e84-11e1-9413-0022693c90c0"/>
+            </LINK>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="b77fa997-6be9-41cd-8ac2-8124458ccaf4"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[- A Gateway with a gatewayDirection of unspecified MAY have both multiple incoming and outgoing Sequence Flow.
+-  A Gateway with a gatewayDirection of mixed MUST have both multiple incoming and outgoing Sequence Flow.
+-  A Gateway with a gatewayDirection of converging MUST have multiple incoming Sequence Flow, but MUST NOT have multiple outgoing Sequence Flow.
+-  A Gateway with a gatewayDirection of diverging MUST have multiple outgoing Sequence Flow, but MUST NOT have multiple incoming Sequence Flow.]]></ATT>
+                  <ATT name="MimeType"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="description" mc="Infrastructure.NoteType" uid="00000000-0000-3e81-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+      <COMP relation="Parent">
+        <OBJECT>
+          <ID name="Generalization" mc="Standard.Generalization" uid="7f78b829-18d6-11e0-9cf7-001ec947ccaf"/>
+          <ATTRIBUTES>
+            <ATT name="Discriminator"></ATT>
+            <ATT name="Name"><![CDATA[Generalization]]></ATT>
+            <ATT name="status">0</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="SuperType">
+              <ID name="BpmnFlowNode" mc="Standard.Class" uid="7f765499-18d6-11e0-9cf7-001ec947ccaf"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+      <LINK relation="Extension">
+        <FOREIGNID name="Semantic" mc="Infrastructure.Stereotype" uid="d52bc425-48e4-11e1-a098-0022693c90c0"/>
+      </LINK>
+      <COMP relation="Descriptor">
+        <OBJECT>
+          <ID name="" mc="Infrastructure.Note" uid="ca6d46cb-6aa6-47ac-b792-f9c3cefe3ec1"/>
+          <ATTRIBUTES>
+            <ATT name="Content"><![CDATA[Gateways are used to control how the Process flows (how Tokens flow) through Sequence Flow as they converge and diverge within a Process. If the flow does not need to be controlled, then a Gateway is not needed. The term ?gateway? implies that there is a gating mechanism that either allows or disallows passage through the Gateway--that is, as tokens arrive at a Gateway, they can be merged together on input and/or split apart on output as the Gateway mechanisms are invoked. Gateways, like Activities, are capable of consuming or generating additional control tokens, effectively controlling the execution semantics of a given Process. The main difference is that Gateways do not represent ?work? being done and they are considered to have zero effect on the operational measures of the Process being executed (cost, time, etc.). The Gateway controls the flow of both diverging and converging Sequence Flow. That is, a single Gateway could have multiple input and multiple output flows. Modelers and modeling tools may want to enforce a best practice of a Gateway only performing one of these functions. Thus, it would take two sequential Gateways to first converge and then to diverge the Sequence Flow.
+
+Ownership
+Gateways belong to Flow element containers, or sub processes]]></ATT>
+            <ATT name="MimeType"></ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Model">
+              <FOREIGNID name="description" mc="Infrastructure.NoteType" uid="00000000-0000-3e81-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

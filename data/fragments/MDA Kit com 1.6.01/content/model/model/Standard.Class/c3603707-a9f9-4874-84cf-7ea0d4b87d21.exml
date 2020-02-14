@@ -1,0 +1,108 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Influence" version="4">
+  <OBJECT>
+    <ID name="Influence" mc="Standard.Class" uid="c3603707-a9f9-4874-84cf-7ea0d4b87d21"/>
+    <PID name="dependency" mc="Standard.Package" uid="94b1cda1-6652-41ec-8a03-883b1f422791"/>
+    <ATTRIBUTES>
+      <ATT name="IsActive">false</ATT>
+      <ATT name="IsMain">false</ATT>
+      <ATT name="IsElementary">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[Influence]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedAttribute">
+        <OBJECT>
+          <ID name="strength" mc="Standard.Attribute" uid="2d97d445-9f40-4c52-9718-c022b38a167c"/>
+          <ATTRIBUTES>
+            <ATT name="TypeConstraint"></ATT>
+            <ATT name="Value"><![CDATA[InfluenceStrength.UNDEFINED.toString()]]></ATT>
+            <ATT name="TargetIsClass">false</ATT>
+            <ATT name="Changeable">ReadWrite</ATT>
+            <ATT name="IsDerived">false</ATT>
+            <ATT name="IsOrdered">false</ATT>
+            <ATT name="IsUnique">false</ATT>
+            <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+            <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[strength]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Type">
+              <FOREIGNID name="string" mc="Standard.DataType" uid="00000004-0000-000d-0000-000000000000"/>
+            </LINK>
+            <LINK relation="Extension">
+              <FOREIGNID name="Semantic" mc="Infrastructure.Stereotype" uid="aaa3daf2-4e84-11e1-9413-0022693c90c0"/>
+            </LINK>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="7ef3d779-a258-4791-af92-f485698066fc"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[<p>Indicates the sign and&nbsp;strength of the influence.</p><p>A choice of possible attribute values is defined in the InfluenceStrength enumeration. By default, the influence relationship models a contribution with unspecified sign and strength.</p>
+]]></ATT>
+                  <ATT name="MimeType"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="description" mc="Infrastructure.NoteType" uid="00000000-0000-3e81-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+      <COMP relation="Parent">
+        <OBJECT>
+          <ID name="Generalization" mc="Standard.Generalization" uid="6cb99b4a-178b-435b-8015-02d4e3429667"/>
+          <ATTRIBUTES>
+            <ATT name="Discriminator"></ATT>
+            <ATT name="Name"><![CDATA[Generalization]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="SuperType">
+              <ID name="DependencyRelationship" mc="Standard.Class" uid="375361d8-fcc5-4b69-9989-b276f261594f"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+      <LINK relation="Extension">
+        <FOREIGNID name="SemanticLinkMetaclass" mc="Infrastructure.Stereotype" uid="06612aa9-ee78-41fe-ae7c-8267a2470a39"/>
+      </LINK>
+      <COMP relation="Descriptor">
+        <OBJECT>
+          <ID name="" mc="Infrastructure.Note" uid="714d349c-f345-4726-a849-d9dcd27aa152"/>
+          <ATTRIBUTES>
+            <ATT name="Content"><![CDATA[<p>The influence relationship is used to describe that some architectural element influences&nbsp;achievement or implementation of a motivation element, such as a goal or a principle.</p><p>In general,&nbsp;a motivation element is realized to a certain degree. For example, consistently satisfying the&nbsp;principle &#39;serve customers wherever they are&#39; will help making the goal &#39;increase market share&#39;&nbsp;come true. In other words, the principle contributes to the goal. In turn, to implement the&nbsp;principle &#39;serve customers wherever they are&#39;, it may be useful to impose a requirement of &#39;24x7&nbsp;web availability&#39; on some customer-facing application component. This can be modeled as a&nbsp;requirement that has a positive influence on that principle, and as an application component that&nbsp;in turn influences the requirement. Consistently modeling these dependencies with an influence&nbsp;relationship yields a traceable motivational path that explains why (in this example) a certain&nbsp;application component contributes to the corporate goal to &#39;increase market share&#39;. This kind of&nbsp;traceability supports measuring the results of Enterprise Architecture, and provides valuable&nbsp;information to, for example, change impact assessments.</p><p>Additional to this &#39;vertical&#39; use of contribution, from core elements upwards to requirements and&nbsp;goals, the relationship can also be used to model &#39;horizontal&#39; contributions between motivation&nbsp;elements. The influence relationship in that case describes that some motivation element may&nbsp;influence (the achievement or implementation of) another motivation element. In general, a&nbsp;motivation element is achieved to a certain degree. An influence by some other element may&nbsp;affect this degree positively or negatively, depending on the degree in which this other element&nbsp;is satisfied itself. For example, the degree in which the goal to increase customer satisfaction is&nbsp;realized may be represented by the percentage of satisfied customers that participate in a market&nbsp;interview. This percentage may be influenced positively by, for example, the goal to improve the&nbsp;reputation of the company; i.e., a higher degree of improvement results in a higher increase in&nbsp;customer satisfaction. On the other hand, the goal to lay off employees may influence the&nbsp;company reputation negatively; i.e., more lay-offs could result in a lower increase (or even&nbsp;decrease) in the company reputation. And thus (indirectly), the goal to increase customer&nbsp;satisfaction may also be influenced negatively.</p><p>An important difference between the <em>realization</em> and <em>influence</em> relationships is that, whereas the&nbsp;<em>realization</em> relationship implies full realization of the relationship&#39;s target, the <em>influence</em>&nbsp;relationship does not have this implication. In other words, while a positive influence (on a goal,&nbsp;principle, requirement, etc.) is useful - and perhaps even necessary - it may very well not be&nbsp;sufficient for its achievement or implementation. Moreover, the influence relationship can be&nbsp;used to model either:</p>
+
+<ul>
+	<li>The fact that an element positively contributes to the achievement or implementation of&nbsp;some motivation element, or</li>
+	<li>The fact that an element negatively influences - i.e., prevents or counteracts - such&nbsp;achievement</li>
+</ul>
+
+<p>Attributes can be used to indicate the sign and/or strength of the influence. The choice of&nbsp;possible attribute values is defined in the <em>InfluenceStength</em> enumeration. By default, the&nbsp;influence relationship models an undefined contribution with unquantified strength.</p>
+]]></ATT>
+            <ATT name="MimeType"></ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Model">
+              <FOREIGNID name="description" mc="Infrastructure.NoteType" uid="00000000-0000-3e81-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

@@ -1,0 +1,75 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Component" version="4">
+  <OBJECT>
+    <ID name="Component" mc="Standard.Class" uid="0008152c-0000-1baf-0000-000000000000"/>
+    <PID name="statik" mc="Standard.Package" uid="00d00f24-0000-0002-0000-000000000000"/>
+    <ATTRIBUTES>
+      <ATT name="IsActive">false</ATT>
+      <ATT name="IsMain">false</ATT>
+      <ATT name="IsElementary">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[Component]]></ATT>
+      <ATT name="status">0</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedEnd">
+        <REFOBJ>
+          <ID name="Realization" mc="Standard.AssociationEnd" uid="0d18c6f5-032d-4481-82b8-dde2259b570d"/>
+        </REFOBJ>
+      </COMP>
+      <COMP relation="Parent">
+        <OBJECT>
+          <ID name="Generalization" mc="Standard.Generalization" uid="0008152c-0000-1bbe-0000-000000000000"/>
+          <ATTRIBUTES>
+            <ATT name="Discriminator"></ATT>
+            <ATT name="Name"><![CDATA[Generalization]]></ATT>
+            <ATT name="status">0</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="SuperType">
+              <ID name="Class" mc="Standard.Class" uid="0148033c-0000-0cae-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+      <LINK relation="Extension">
+        <FOREIGNID name="Semantic" mc="Infrastructure.Stereotype" uid="d52bc425-48e4-11e1-a098-0022693c90c0"/>
+      </LINK>
+      <COMP relation="Descriptor">
+        <OBJECT>
+          <ID name="" mc="Infrastructure.Note" uid="239147f9-be8a-4df5-a4c9-cd28a7d8b3d1"/>
+          <ATTRIBUTES>
+            <ATT name="Content"><![CDATA[A Component defines its behavior in terms of ProvidedInterfaces and RequiredInterfaces. As such, a Component serves as a type, whose conformity is defined by these ProvidedInterfaces and RequiredInterfaces (encompassing both their static as well as dynamic semantics). One Component may therefore be substituted by another only if the two are type-conformant. 
+
+Larger pieces of a system's functionality may be assembled by reusing Components as parts in an encompassing Component or assembly of Components, and wiring together their ProvidedInterfaces and RequiredInterfaces. 
+
+A Component is modeled throughout the development life cycle and successively refined into deployment and run-time. 
+
+A Component may be manifested by one or more Artifacts, and in turn, that Artifact may be deployed to its execution environment.    
+
+A Component is a subtype of Class, and can have Attributes and Operations, and is able to participate in Associations and Generalizations. A Component may form the Abstraction for a set of realizing Classifiers that realize its behavior. 
+
+A Component may optionally have an internal structure and own a set of Ports that formalize its interaction points.  
+
+A Component has a number of ProvidedInterfaces and RequiredInterfaces, that form the basis for wiring components together, either using Dependencies or Connectors. A ProvidedInterface is one that is either implemented directly by the Component or one of its realizing Classifiers, or it is the type of a provided Port of the Component. A RequiredInterface is designated by a Usage Dependency from the Component or one of its realizing Classifiers, or it is the type of a required Port. 
+
+A Component is extended to define the grouping aspects of packaging Components. This defines the NameSpace aspects of a Component through its inherited ownedMember and elementImport associations. In a Component's NameSpace, all ModelElements that are involved in or related to its definition are either owned or imported explicitly. This may include, for example, UseCases and Dependencies (for example, mappings), Packages, Components and Artifacts.
+
+]]></ATT>
+            <ATT name="MimeType"></ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Model">
+              <FOREIGNID name="description" mc="Infrastructure.NoteType" uid="00000000-0000-3e81-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

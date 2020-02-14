@@ -1,0 +1,78 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="BusinessObject" version="4">
+  <OBJECT>
+    <ID name="BusinessObject" mc="Standard.Class" uid="062900c8-a0ca-46fa-91a7-d367fc6b235f"/>
+    <PID name="passive" mc="Standard.Package" uid="422e92be-fa24-44c2-96f4-ee2c5f4c18cb"/>
+    <ATTRIBUTES>
+      <ATT name="IsActive">false</ATT>
+      <ATT name="IsMain">false</ATT>
+      <ATT name="IsElementary">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[BusinessObject]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="Parent">
+        <OBJECT>
+          <ID name="Generalization" mc="Standard.Generalization" uid="2e59d524-f5f2-4c87-abce-87f426f03f8d"/>
+          <ATTRIBUTES>
+            <ATT name="Discriminator"></ATT>
+            <ATT name="Name"><![CDATA[Generalization]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="SuperType">
+              <ID name="BusinessPassiveStructureElement" mc="Standard.Class" uid="e19c239e-4f72-4a4c-9993-2a8a6a92776a"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+      <COMP relation="OwnedInformationFlow">
+        <OBJECT>
+          <ID name="" mc="Standard.InformationFlow" uid="bf3a5aaf-f0f0-4897-bf2b-edb88d334fc5"/>
+          <ATTRIBUTES>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="InformationSource">
+              <ID name="BusinessObject" mc="Standard.Class" uid="062900c8-a0ca-46fa-91a7-d367fc6b235f"/>
+            </LINK>
+            <LINK relation="InformationTarget">
+              <ID name="BusinessObject" mc="Standard.Class" uid="062900c8-a0ca-46fa-91a7-d367fc6b235f"/>
+            </LINK>
+            <LINK relation="Conveyed">
+              <ID name="Aggregation" mc="Standard.Class" uid="410742f3-8e18-46eb-ad5c-384854a3ca51"/>
+            </LINK>
+            <LINK relation="Extension">
+              <FOREIGNID name="SemGenAllowedLink" mc="Infrastructure.Stereotype" uid="08815724-7330-40ab-a1c4-c96d3fafcda2"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+      <LINK relation="Extension">
+        <FOREIGNID name="Semantic" mc="Infrastructure.Stereotype" uid="d52bc425-48e4-11e1-a098-0022693c90c0"/>
+      </LINK>
+      <COMP relation="Descriptor">
+        <OBJECT>
+          <ID name="" mc="Infrastructure.Note" uid="35dd5358-e81c-4095-9dc4-f394a97eec6c"/>
+          <ATTRIBUTES>
+            <ATT name="Content"><![CDATA[<p>The ArchiMate language in general focuses on the modeling of&nbsp;types, not instances, since this is the most relevant at the Enterprise Architecture level of&nbsp;description. Hence a business object typically models an object type (cf. a UML class) of which&nbsp;<span style="line-height:1.6">multiple instances may exist in operations. Only occasionally, business objects represent actual&nbsp;</span>instances of information produced and consumed by behavior elements such as business&nbsp;processes. This is in particular the case for singleton types; i.e., types that have only one&nbsp;instance.</p><p>A wide variety of types of business objects can be defined. Business objects are passive in the&nbsp;sense that they do not trigger or perform processes. A business object could be used to represent&nbsp;information assets that are relevant from a business point of view and can be realized by data&nbsp;objects.</p><p>Business objects may be accessed (e.g., in the case of information objects, they may be created,&nbsp;read, written) by a business process, function, business interaction, business event, or business&nbsp;service. A business object may have association, specialization, aggregation, or composition&nbsp;relationships with other business objects. A business object may be realized by a representation&nbsp;or by a data object (or both).</p><p>The name of a business object should preferably be a noun.</p>
+]]></ATT>
+            <ATT name="MimeType"></ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Model">
+              <FOREIGNID name="description" mc="Infrastructure.NoteType" uid="00000000-0000-3e81-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

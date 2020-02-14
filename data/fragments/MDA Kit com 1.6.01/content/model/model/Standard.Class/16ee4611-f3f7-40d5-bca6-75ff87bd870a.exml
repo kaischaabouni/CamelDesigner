@@ -1,0 +1,127 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Meaning" version="4">
+  <OBJECT>
+    <ID name="Meaning" mc="Standard.Class" uid="16ee4611-f3f7-40d5-bca6-75ff87bd870a"/>
+    <PID name="motivation" mc="Standard.Package" uid="879b2b5e-231e-4f58-aaab-a5b7e24d1627"/>
+    <ATTRIBUTES>
+      <ATT name="IsActive">false</ATT>
+      <ATT name="IsMain">false</ATT>
+      <ATT name="IsElementary">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[Meaning]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedAttribute">
+        <OBJECT>
+          <ID name="equivalentRef" mc="Standard.Attribute" uid="94ccd680-876e-4d15-9bb6-ab9f20983361"/>
+          <ATTRIBUTES>
+            <ATT name="TypeConstraint"></ATT>
+            <ATT name="Value"></ATT>
+            <ATT name="TargetIsClass">false</ATT>
+            <ATT name="Changeable">ReadWrite</ATT>
+            <ATT name="IsDerived">false</ATT>
+            <ATT name="IsOrdered">false</ATT>
+            <ATT name="IsUnique">false</ATT>
+            <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+            <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[equivalentRef]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Type">
+              <FOREIGNID name="string" mc="Standard.DataType" uid="00000004-0000-000d-0000-000000000000"/>
+            </LINK>
+            <LINK relation="Extension">
+              <FOREIGNID name="Semantic" mc="Infrastructure.Stereotype" uid="aaa3daf2-4e84-11e1-9413-0022693c90c0"/>
+            </LINK>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="63f8a927-b589-434d-91bc-1d0026ac0c53"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[To set this meaning as equivalent to an analyst Term, set this attribute with the result of new MRef(analystElement).toString().]]></ATT>
+                  <ATT name="MimeType"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="description" mc="Infrastructure.NoteType" uid="00000000-0000-3e81-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+      <COMP relation="Parent">
+        <OBJECT>
+          <ID name="Generalization" mc="Standard.Generalization" uid="6094494a-a9a5-4f0c-b876-cdf875a15d7e"/>
+          <ATTRIBUTES>
+            <ATT name="Discriminator"></ATT>
+            <ATT name="Name"><![CDATA[Generalization]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="SuperType">
+              <ID name="MotivationElement" mc="Standard.Class" uid="69792ba5-5e1c-4322-9c01-209e795d5430"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+      <COMP relation="OwnedInformationFlow">
+        <OBJECT>
+          <ID name="" mc="Standard.InformationFlow" uid="139f970a-ccaa-4784-a20d-4446b28a91a5"/>
+          <ATTRIBUTES>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="InformationSource">
+              <ID name="Meaning" mc="Standard.Class" uid="16ee4611-f3f7-40d5-bca6-75ff87bd870a"/>
+            </LINK>
+            <LINK relation="InformationTarget">
+              <ID name="Meaning" mc="Standard.Class" uid="16ee4611-f3f7-40d5-bca6-75ff87bd870a"/>
+            </LINK>
+            <LINK relation="Conveyed">
+              <ID name="Aggregation" mc="Standard.Class" uid="410742f3-8e18-46eb-ad5c-384854a3ca51"/>
+            </LINK>
+            <LINK relation="Extension">
+              <FOREIGNID name="SemGenAllowedLink" mc="Infrastructure.Stereotype" uid="08815724-7330-40ab-a1c4-c96d3fafcda2"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+      <LINK relation="Extension">
+        <FOREIGNID name="Semantic" mc="Infrastructure.Stereotype" uid="d52bc425-48e4-11e1-a098-0022693c90c0"/>
+      </LINK>
+      <COMP relation="Descriptor">
+        <OBJECT>
+          <ID name="" mc="Infrastructure.Note" uid="ec7476b3-284b-4d2e-b9b8-fb964ac19b11"/>
+          <ATTRIBUTES>
+            <ATT name="Content"><![CDATA[<p>A meaning represents the interpretation of an element of the architecture. In particular, this is&nbsp;used to describe the meaning of passive structure elements, (for example, a document, message).</p><p>It is a description that expresses the intent of that element; i.e., how it informs the external user.</p><p>It is possible that different users view the informative functionality of an element differently. For&nbsp;example, what may be a &quot;registration confirmation&quot; for a client could be a &quot;client mutation&quot; for&nbsp;a CRM department (assuming for the sake of argument that it is modeled as an external user).</p><p>Also, various different representations may carry essentially the same meaning. For example,&nbsp;various different documents (a web document, a filled-in paper form, a &quot;client contact&quot; report&nbsp;from the call center) may essentially carry the same meaning.</p><p>A meaning can be associated with any core element. To denote that a meaning is specific to a&nbsp;particular stakeholder, this stakeholder can also be associated to the meaning.</p><p>The name of a&nbsp;meaning should preferably be a noun or noun phrase.</p>
+
+<h3>Refinement and equivalence link</h3>
+
+<p>An Archimate meaning may be refined in an Analyst <em>term</em>. The Archimate&nbsp;meaning&nbsp;may then be set as equivalent as the Analyst&nbsp;term&nbsp; Then, the&nbsp;Archimate&nbsp;meaning&nbsp;will be synchonized to the Analyt&nbsp;term&nbsp;&nbsp;calling getName() or setName() on the Archimate&nbsp;meaning&nbsp;will call the same method of the Analyst&nbsp;term.</p>
+]]></ATT>
+            <ATT name="MimeType"></ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Model">
+              <FOREIGNID name="description" mc="Infrastructure.NoteType" uid="00000000-0000-3e81-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

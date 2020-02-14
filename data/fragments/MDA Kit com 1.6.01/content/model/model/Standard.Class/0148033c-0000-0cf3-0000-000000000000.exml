@@ -1,0 +1,73 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Dependency" version="4">
+  <OBJECT>
+    <ID name="Dependency" mc="Standard.Class" uid="0148033c-0000-0cf3-0000-000000000000"/>
+    <PID name="infrastructure" mc="Standard.Package" uid="00d00f24-0000-0001-0000-000000000000"/>
+    <ATTRIBUTES>
+      <ATT name="IsActive">false</ATT>
+      <ATT name="IsMain">false</ATT>
+      <ATT name="IsElementary">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[Dependency]]></ATT>
+      <ATT name="status">0</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedEnd">
+        <REFOBJ>
+          <ID name="Impacted" mc="Standard.AssociationEnd" uid="0148033c-0001-9b28-0000-000000000000"/>
+        </REFOBJ>
+        <REFOBJ>
+          <ID name="DependsOn" mc="Standard.AssociationEnd" uid="0148033c-0001-9b5b-0000-000000000000"/>
+        </REFOBJ>
+      </COMP>
+      <COMP relation="Parent">
+        <OBJECT>
+          <ID name="" mc="Standard.Generalization" uid="0148033c-0001-9b9a-0000-000000000000"/>
+          <ATTRIBUTES>
+            <ATT name="Discriminator"></ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">0</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="SuperType">
+              <ID name="ModelElement" mc="Standard.Class" uid="77b315bb-af12-4ca5-a8cf-5c4a9ed90bdb"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+      <LINK relation="Extension">
+        <FOREIGNID name="Semantic" mc="Infrastructure.Stereotype" uid="d52bc425-48e4-11e1-a098-0022693c90c0"/>
+        <FOREIGNID name="SemanticLinkMetaclass" mc="Infrastructure.Stereotype" uid="06612aa9-ee78-41fe-ae7c-8267a2470a39"/>
+      </LINK>
+      <COMP relation="Descriptor">
+        <OBJECT>
+          <ID name="" mc="Infrastructure.Note" uid="a115297d-8dda-432a-8858-e6b91c16a9ee"/>
+          <ATTRIBUTES>
+            <ATT name="Content"><![CDATA[<p>In the metamodel, a Dependency is a directed relationship from a client to a supplier, stating that the client is dependent on the supplier (in other words, the client element requires the presence and knowledge of the supplier element).</p><p>Dependencies are widely used inside Modelio to manage traceability. Any ModelElement can be traced to another ModelElement using this association.</p><p>In Modelio, a Dependency can only have one client and one supplier.</p><p>In Modelio, in order to comply with UML 2.0, the roles are swapped and renamed. The correspondence from UML 2.0 is now as follows:</p>
+
+<ul>
+	<li>Dependency.client = Dependency.Impacted;</li>
+	<li>Dependency.supplier = Dependency.DependsOn;</li>
+	<li>Element.supplierDependency = ModelElement.ImpactedDependency;</li>
+	<li>Element.clientDependency = ModelElement.DependsOnDependency.</li>
+</ul>
+
+<p>A Dependency now belongs to the impacted element (the client in UML 2.0).</p>
+]]></ATT>
+            <ATT name="MimeType"></ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Model">
+              <FOREIGNID name="description" mc="Infrastructure.NoteType" uid="00000000-0000-3e81-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

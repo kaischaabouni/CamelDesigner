@@ -1,0 +1,219 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="gateways" version="4">
+  <OBJECT>
+    <ID name="gateways" mc="Standard.Package" uid="7f73f1c4-18d6-11e0-9cf7-001ec947ccaf"/>
+    <PID name="bpmn" mc="Standard.Package" uid="9730153a-0829-11e0-9123-001ec947ccaf"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[gateways]]></ATT>
+      <ATT name="status">0</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedPackageImport">
+        <OBJECT>
+          <ID name="PackageImport" mc="Standard.PackageImport" uid="7f7654d2-18d6-11e0-9cf7-001ec947ccaf"/>
+          <ATTRIBUTES>
+            <ATT name="Visibility">Private</ATT>
+            <ATT name="Name"><![CDATA[PackageImport]]></ATT>
+            <ATT name="status">0</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="ImportedPackage">
+              <ID name="rootElements" mc="Standard.Package" uid="7f73f20c-18d6-11e0-9cf7-001ec947ccaf"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+      <COMP relation="OwnedElement">
+        <COMPID name="BpmnComplexGateway" mc="Standard.Class" uid="7f7654e3-18d6-11e0-9cf7-001ec947ccaf"/>
+        <COMPID name="BpmnEventBasedGateway" mc="Standard.Class" uid="7f7654e4-18d6-11e0-9cf7-001ec947ccaf"/>
+        <OBJECT>
+          <ID name="BpmnEventBasedGatewayType" mc="Standard.Enumeration" uid="7f7654b1-18d6-11e0-9cf7-001ec947ccaf"/>
+          <ATTRIBUTES>
+            <ATT name="IsElementary">true</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="IsLeaf">false</ATT>
+            <ATT name="IsRoot">false</ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="Name"><![CDATA[BpmnEventBasedGatewayType]]></ATT>
+            <ATT name="status">0</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Value">
+              <OBJECT>
+                <ID name="ParallelGateway" mc="Standard.EnumerationLiteral" uid="7f78b836-18d6-11e0-9cf7-001ec947ccaf"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[ParallelGateway]]></ATT>
+                  <ATT name="status">0</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="ExclusiveGateway" mc="Standard.EnumerationLiteral" uid="7f78b824-18d6-11e0-9cf7-001ec947ccaf"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[ExclusiveGateway]]></ATT>
+                  <ATT name="status">0</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <LINK relation="Extension">
+              <FOREIGNID name="Semantic" mc="Infrastructure.Stereotype" uid="7e1b8b34-75da-451d-9f12-a2f2b213bcf7"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <COMPID name="BpmnExclusiveGateway" mc="Standard.Class" uid="7f7654b2-18d6-11e0-9cf7-001ec947ccaf"/>
+        <COMPID name="BpmnGateway" mc="Standard.Class" uid="7f7654ce-18d6-11e0-9cf7-001ec947ccaf"/>
+        <OBJECT>
+          <ID name="BpmnGatewayDirection" mc="Standard.Enumeration" uid="7f7654cf-18d6-11e0-9cf7-001ec947ccaf"/>
+          <ATTRIBUTES>
+            <ATT name="IsElementary">true</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="IsLeaf">false</ATT>
+            <ATT name="IsRoot">false</ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="Name"><![CDATA[BpmnGatewayDirection]]></ATT>
+            <ATT name="status">0</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Value">
+              <OBJECT>
+                <ID name="UnspecifiedDirection" mc="Standard.EnumerationLiteral" uid="7f78b82b-18d6-11e0-9cf7-001ec947ccaf"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[UnspecifiedDirection]]></ATT>
+                  <ATT name="status">0</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="Descriptor">
+                    <OBJECT>
+                      <ID name="Note" mc="Infrastructure.Note" uid="7f7b1a09-18d6-11e0-9cf7-001ec947ccaf"/>
+                      <ATTRIBUTES>
+                        <ATT name="Content"><![CDATA[There are no constraints. The Gateway MAY have any number of incoming and outgoing Sequence Flow.
+
+Note : this is not recommended. ]]></ATT>
+                        <ATT name="MimeType"></ATT>
+                        <ATT name="Name"><![CDATA[Note]]></ATT>
+                        <ATT name="status">0</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES>
+                        <LINK relation="Model">
+                          <FOREIGNID name="description" mc="Infrastructure.NoteType" uid="00000000-0000-3e81-0000-000000000000"/>
+                        </LINK>
+                      </DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="ConvergingDirection" mc="Standard.EnumerationLiteral" uid="7f78b82c-18d6-11e0-9cf7-001ec947ccaf"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[ConvergingDirection]]></ATT>
+                  <ATT name="status">0</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="Descriptor">
+                    <OBJECT>
+                      <ID name="Note" mc="Infrastructure.Note" uid="7f7b1a0a-18d6-11e0-9cf7-001ec947ccaf"/>
+                      <ATTRIBUTES>
+                        <ATT name="Content"><![CDATA[This Gateway MAY have multiple incoming Sequence Flow but MUST have no more than one outgoing SequenceFlow.]]></ATT>
+                        <ATT name="MimeType"></ATT>
+                        <ATT name="Name"><![CDATA[Note]]></ATT>
+                        <ATT name="status">0</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES>
+                        <LINK relation="Model">
+                          <FOREIGNID name="description" mc="Infrastructure.NoteType" uid="00000000-0000-3e81-0000-000000000000"/>
+                        </LINK>
+                      </DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="DivergingDirection" mc="Standard.EnumerationLiteral" uid="7f78b82d-18d6-11e0-9cf7-001ec947ccaf"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[DivergingDirection]]></ATT>
+                  <ATT name="status">0</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="Descriptor">
+                    <OBJECT>
+                      <ID name="Note" mc="Infrastructure.Note" uid="7f7b1a0b-18d6-11e0-9cf7-001ec947ccaf"/>
+                      <ATTRIBUTES>
+                        <ATT name="Content"><![CDATA[This Gateway MAY have multiple outgoing Sequence Flow but MUST have no more than one incoming Sequence Flow.]]></ATT>
+                        <ATT name="MimeType"></ATT>
+                        <ATT name="Name"><![CDATA[Note]]></ATT>
+                        <ATT name="status">0</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES>
+                        <LINK relation="Model">
+                          <FOREIGNID name="description" mc="Infrastructure.NoteType" uid="00000000-0000-3e81-0000-000000000000"/>
+                        </LINK>
+                      </DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="MixedDirection" mc="Standard.EnumerationLiteral" uid="7f78b82e-18d6-11e0-9cf7-001ec947ccaf"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[MixedDirection]]></ATT>
+                  <ATT name="status">0</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="Descriptor">
+                    <OBJECT>
+                      <ID name="Note" mc="Infrastructure.Note" uid="7f7b1a0c-18d6-11e0-9cf7-001ec947ccaf"/>
+                      <ATTRIBUTES>
+                        <ATT name="Content"><![CDATA[This Gateway contains multiple outgoing and multiple incoming Sequence Flow.
+
+Note: This is not recommended.]]></ATT>
+                        <ATT name="MimeType"></ATT>
+                        <ATT name="Name"><![CDATA[Note]]></ATT>
+                        <ATT name="status">0</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES>
+                        <LINK relation="Model">
+                          <FOREIGNID name="description" mc="Infrastructure.NoteType" uid="00000000-0000-3e81-0000-000000000000"/>
+                        </LINK>
+                      </DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <LINK relation="Extension">
+              <FOREIGNID name="Semantic" mc="Infrastructure.Stereotype" uid="7e1b8b34-75da-451d-9f12-a2f2b213bcf7"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <COMPID name="BpmnInclusiveGateway" mc="Standard.Class" uid="7f7654d0-18d6-11e0-9cf7-001ec947ccaf"/>
+        <COMPID name="BpmnParallelGateway" mc="Standard.Class" uid="7f7654d1-18d6-11e0-9cf7-001ec947ccaf"/>
+      </COMP>
+      <LINK relation="Extension">
+        <FOREIGNID name="Semantic" mc="Infrastructure.Stereotype" uid="787267f2-4b2c-11e1-90df-0022693c90c0"/>
+      </LINK>
+      <COMP relation="Descriptor">
+        <OBJECT>
+          <ID name="" mc="Infrastructure.Note" uid="6862eb14-bdd6-46a6-a7ba-244c948d684b"/>
+          <ATTRIBUTES>
+            <ATT name="Content"><![CDATA[<p>Gateways are used to control how the Process flows (how Tokens flow) through Sequence Flows as they converge&nbsp;and diverge within a Process. If the flow does not need to be controlled, then a Gateway is not needed. The term&nbsp;&#8220;gateway&#8221; implies that there is a gating mechanism that either allows or disallows passage through the Gateway; that is,&nbsp;as tokens arrive at a Gateway, they can be merged together on input and/or split apart on output as the Gateway&nbsp;mechanisms are invoked.</p><p>Gateways, like Activities, are capable of consuming or generating additional control tokens, effectively controlling the&nbsp;execution semantics of a given Process. The main difference is that Gateways do not represent &#8216;work&#8217; being done and&nbsp;they are considered to have zero effect on the operational measures of the Process being executed (cost, time, etc.).</p><p>The Gateway controls the flow of both diverging and converging Sequence Flows. That is, a single Gateway could&nbsp;have multiple input and multiple output flows. Modelers and modeling tools might want to enforce a best practice of a&nbsp;Gateway only performing one of these functions. Thus, it would take two sequential Gateways to first converge and&nbsp;then to diverge the Sequence Flows.</p>
+]]></ATT>
+            <ATT name="MimeType"><![CDATA[text/html]]></ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Model">
+              <FOREIGNID name="description" mc="Infrastructure.NoteType" uid="00000000-0000-3e81-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

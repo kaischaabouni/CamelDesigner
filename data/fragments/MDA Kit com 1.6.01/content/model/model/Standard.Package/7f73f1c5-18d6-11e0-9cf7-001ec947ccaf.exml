@@ -1,0 +1,115 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="objects" version="4">
+  <OBJECT>
+    <ID name="objects" mc="Standard.Package" uid="7f73f1c5-18d6-11e0-9cf7-001ec947ccaf"/>
+    <PID name="bpmn" mc="Standard.Package" uid="9730153a-0829-11e0-9123-001ec947ccaf"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[objects]]></ATT>
+      <ATT name="status">0</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedPackageImport">
+        <OBJECT>
+          <ID name="PackageImport" mc="Standard.PackageImport" uid="7f7654c8-18d6-11e0-9cf7-001ec947ccaf"/>
+          <ATTRIBUTES>
+            <ATT name="Visibility">Private</ATT>
+            <ATT name="Name"><![CDATA[PackageImport]]></ATT>
+            <ATT name="status">0</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="ImportedPackage">
+              <ID name="rootElements" mc="Standard.Package" uid="7f73f20c-18d6-11e0-9cf7-001ec947ccaf"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+      <COMP relation="OwnedElement">
+        <COMPID name="BpmnDataAssociation" mc="Standard.Class" uid="7f7654e1-18d6-11e0-9cf7-001ec947ccaf"/>
+        <COMPID name="BpmnDataInput" mc="Standard.Class" uid="7f7654c3-18d6-11e0-9cf7-001ec947ccaf"/>
+        <COMPID name="BpmnDataObject" mc="Standard.Class" uid="7f7654ec-18d6-11e0-9cf7-001ec947ccaf"/>
+        <COMPID name="BpmnDataOutput" mc="Standard.Class" uid="7f7654c2-18d6-11e0-9cf7-001ec947ccaf"/>
+        <COMPID name="BpmnDataState" mc="Standard.Class" uid="7f7654c7-18d6-11e0-9cf7-001ec947ccaf"/>
+        <COMPID name="BpmnDataStore" mc="Standard.Class" uid="7f7654e0-18d6-11e0-9cf7-001ec947ccaf"/>
+        <COMPID name="BpmnItemAwareElement" mc="Standard.Class" uid="7f7654c4-18d6-11e0-9cf7-001ec947ccaf"/>
+        <COMPID name="BpmnItemDefinition" mc="Standard.Class" uid="7f7654c5-18d6-11e0-9cf7-001ec947ccaf"/>
+        <OBJECT>
+          <ID name="BpmnItemKind" mc="Standard.Enumeration" uid="7f7654c6-18d6-11e0-9cf7-001ec947ccaf"/>
+          <ATTRIBUTES>
+            <ATT name="IsElementary">true</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="IsLeaf">false</ATT>
+            <ATT name="IsRoot">false</ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="Name"><![CDATA[BpmnItemKind]]></ATT>
+            <ATT name="status">0</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Value">
+              <OBJECT>
+                <ID name="physical" mc="Standard.EnumerationLiteral" uid="7f78b875-18d6-11e0-9cf7-001ec947ccaf"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[physical]]></ATT>
+                  <ATT name="status">0</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="information" mc="Standard.EnumerationLiteral" uid="7f78b876-18d6-11e0-9cf7-001ec947ccaf"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[information]]></ATT>
+                  <ATT name="status">0</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <LINK relation="Extension">
+              <FOREIGNID name="Semantic" mc="Infrastructure.Stereotype" uid="7e1b8b34-75da-451d-9f12-a2f2b213bcf7"/>
+            </LINK>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="Note" mc="Infrastructure.Note" uid="7f78b874-18d6-11e0-9cf7-001ec947ccaf"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[Items can be either physical items, such as the mechanical part of a vehicle, or information items such the catalog of the mechanical parts of a vehicle.]]></ATT>
+                  <ATT name="MimeType"></ATT>
+                  <ATT name="Name"><![CDATA[Note]]></ATT>
+                  <ATT name="status">0</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="description" mc="Infrastructure.NoteType" uid="00000000-0000-3e81-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <COMPID name="BpmnSequenceFlowDataAssociation" mc="Standard.Class" uid="7f7654e2-18d6-11e0-9cf7-001ec947ccaf"/>
+      </COMP>
+      <LINK relation="Extension">
+        <FOREIGNID name="Semantic" mc="Infrastructure.Stereotype" uid="787267f2-4b2c-11e1-90df-0022693c90c0"/>
+      </LINK>
+      <COMP relation="Descriptor">
+        <OBJECT>
+          <ID name="" mc="Infrastructure.Note" uid="be3e8870-3a51-4e01-94d8-db630304a7fc"/>
+          <ATTRIBUTES>
+            <ATT name="Content"><![CDATA[<p>A traditional requirement of Process modeling is to be able to model the items (physical or information items) that are&nbsp;created, manipulated, and used during the execution of a Process.</p><p>This requirement is realized in BPMN through various constructs: Data Objects, ItemDefinition, Properties, Data&nbsp;Inputs, Data Outputs, Messages, Input Sets, Output Sets, and Data Associations.</p><p><strong>Item-Aware Elements</strong></p><p>Several elements in BPMN are subject to store or convey items during process execution. These elements are referenced&nbsp;generally as &#8220;item-aware elements.&#8221; This is similar to the variable construct common to many languages. As with&nbsp;variables, these elements have an ItemDefinition.</p><p>The data structure these elements hold is specified using an associated ItemDefinition. An ItemAwareElement&nbsp;MAY be underspecified, meaning that the structure attribute of its ItemDefinition is optional if the modeler does&nbsp;not wish to define the structure of the associated data.</p><p>The elements in the specification defined as item-aware elements are: Data Objects, Data Object References, Data&nbsp;Stores, Properties, DataInputs and DataOutputs.</p>
+]]></ATT>
+            <ATT name="MimeType"><![CDATA[text/html]]></ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Model">
+              <FOREIGNID name="description" mc="Infrastructure.NoteType" uid="00000000-0000-3e81-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>
