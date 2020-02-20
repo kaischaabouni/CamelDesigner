@@ -68,6 +68,20 @@
                   <LINK relation="Type">
                     <FOREIGNID name="string" mc="Standard.DataType" uid="00000004-0000-000d-0000-000000000000"/>
                   </LINK>
+                  <COMP relation="Tag">
+                    <OBJECT>
+                      <ID name="" mc="Infrastructure.TaggedValue" uid="3e194ca7-7c5a-41ad-9d91-7a0c0f148315"/>
+                      <ATTRIBUTES>
+                        <ATT name="Name"></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES>
+                        <LINK relation="Definition">
+                          <FOREIGNID name="JavaFinal" mc="Infrastructure.TagType" uid="eb8c1900-000a-b31d-0000-000000000000"/>
+                        </LINK>
+                      </DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
                 </DEPENDENCIES>
               </OBJECT>
             </COMP>
@@ -105,7 +119,7 @@
     return '!' + key + '!';
 }
 ]]></ATT>
-                  <ATT name="MimeType"></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
                 </ATTRIBUTES>
@@ -152,6 +166,20 @@
                   <LINK relation="Type">
                     <FOREIGNID name="string" mc="Standard.DataType" uid="00000004-0000-000d-0000-000000000000"/>
                   </LINK>
+                  <COMP relation="Tag">
+                    <OBJECT>
+                      <ID name="" mc="Infrastructure.TaggedValue" uid="ad607ec3-8359-46a1-aebb-1f7cd6c1588a"/>
+                      <ATTRIBUTES>
+                        <ATT name="Name"></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES>
+                        <LINK relation="Definition">
+                          <FOREIGNID name="JavaFinal" mc="Infrastructure.TagType" uid="eb8c1900-000a-b31d-0000-000000000000"/>
+                        </LINK>
+                      </DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
@@ -175,6 +203,18 @@
                     <FOREIGNID name="string" mc="Standard.DataType" uid="00000004-0000-000d-0000-000000000000"/>
                   </LINK>
                   <COMP relation="Tag">
+                    <OBJECT>
+                      <ID name="" mc="Infrastructure.TaggedValue" uid="c4707fe2-3976-4d69-996e-8cfa53359cdf"/>
+                      <ATTRIBUTES>
+                        <ATT name="Name"></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES>
+                        <LINK relation="Definition">
+                          <FOREIGNID name="JavaFinal" mc="Infrastructure.TagType" uid="eb8c1900-000a-b31d-0000-000000000000"/>
+                        </LINK>
+                      </DEPENDENCIES>
+                    </OBJECT>
                     <OBJECT>
                       <ID name="" mc="Infrastructure.TaggedValue" uid="f65923fc-dcc5-40e5-b05e-fdb2c9c00aec"/>
                       <ATTRIBUTES>
@@ -225,7 +265,7 @@
     return '!' + key + '!';
 }
 ]]></ATT>
-                  <ATT name="MimeType"></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
                 </ATTRIBUTES>
@@ -318,49 +358,37 @@
           </DEPENDENCIES>
         </OBJECT>
       </COMP>
-      <LINK relation="Extension">
-        <FOREIGNID name="JavaClass" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0258-0000-000000000000"/>
-      </LINK>
-      <COMP relation="Tag">
+      <COMP relation="OwnedImport">
         <OBJECT>
-          <ID name="" mc="Infrastructure.TaggedValue" uid="184da93b-5d42-42df-af51-a8df7fc52286"/>
+          <ID name="" mc="Standard.ElementImport" uid="a9c5d9dc-7c3f-47ac-b040-0a168bad8a21"/>
           <ATTRIBUTES>
+            <ATT name="Visibility">Private</ATT>
             <ATT name="Name"></ATT>
             <ATT name="status">1970354901745664</ATT>
           </ATTRIBUTES>
           <DEPENDENCIES>
-            <COMP relation="Actual">
-              <OBJECT>
-                <ID name="" mc="Infrastructure.TagParameter" uid="72e1dea9-077b-48c9-90b7-3b67ceccab6c"/>
-                <ATTRIBUTES>
-                  <ATT name="Value"><![CDATA[java.text.MessageFormat]]></ATT>
-                  <ATT name="status">1970354901745664</ATT>
-                </ATTRIBUTES>
-                <DEPENDENCIES></DEPENDENCIES>
-              </OBJECT>
-              <OBJECT>
-                <ID name="" mc="Infrastructure.TagParameter" uid="88785767-3cbb-4a5d-bf39-33262fa71780"/>
-                <ATTRIBUTES>
-                  <ATT name="Value"><![CDATA[java.util.MissingResourceException]]></ATT>
-                  <ATT name="status">1970354901745664</ATT>
-                </ATTRIBUTES>
-                <DEPENDENCIES></DEPENDENCIES>
-              </OBJECT>
-              <OBJECT>
-                <ID name="" mc="Infrastructure.TagParameter" uid="de0d6a30-6116-4126-97d6-3d3c75a5ab42"/>
-                <ATTRIBUTES>
-                  <ATT name="Value"><![CDATA[java.util.ResourceBundle]]></ATT>
-                  <ATT name="status">1970354901745664</ATT>
-                </ATTRIBUTES>
-                <DEPENDENCIES></DEPENDENCIES>
-              </OBJECT>
-            </COMP>
-            <LINK relation="Definition">
-              <FOREIGNID name="JavaImport" mc="Infrastructure.TagType" uid="003800a8-0000-0155-0000-000000000000"/>
+            <LINK relation="ImportedElement">
+              <FOREIGNID name="MessageFormat" mc="Standard.Class" uid="00d00398-0000-2de0-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="" mc="Standard.ElementImport" uid="a577f1f4-b01a-4130-bde4-b34bcf946612"/>
+          <ATTRIBUTES>
+            <ATT name="Visibility">Private</ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="ImportedElement">
+              <FOREIGNID name="MissingResourceException" mc="Standard.Class" uid="00d00398-0000-2ced-0000-000000000000"/>
             </LINK>
           </DEPENDENCIES>
         </OBJECT>
       </COMP>
+      <LINK relation="Extension">
+        <FOREIGNID name="JavaClass" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0258-0000-000000000000"/>
+      </LINK>
     </DEPENDENCIES>
   </OBJECT>
 </EXT>
