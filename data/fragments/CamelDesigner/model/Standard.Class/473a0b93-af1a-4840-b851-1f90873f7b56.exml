@@ -52,6 +52,18 @@
                   </LINK>
                   <COMP relation="Tag">
                     <OBJECT>
+                      <ID name="" mc="Infrastructure.TaggedValue" uid="f1d96ca8-795e-43cb-b59b-8ec7d2d8a38f"/>
+                      <ATTRIBUTES>
+                        <ATT name="Name"></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES>
+                        <LINK relation="Definition">
+                          <FOREIGNID name="JavaFinal" mc="Infrastructure.TagType" uid="eb8c1900-000a-b31d-0000-000000000000"/>
+                        </LINK>
+                      </DEPENDENCIES>
+                    </OBJECT>
+                    <OBJECT>
                       <ID name="" mc="Infrastructure.TaggedValue" uid="558ec006-6180-4df2-a492-651e4ac78dc0"/>
                       <ATTRIBUTES>
                         <ATT name="Name"></ATT>
@@ -96,6 +108,20 @@
                   <LINK relation="Type">
                     <FOREIGNID name="IModule" mc="Standard.Interface" uid="01f40414-0000-32a9-0000-000000000000"/>
                   </LINK>
+                  <COMP relation="Tag">
+                    <OBJECT>
+                      <ID name="" mc="Infrastructure.TaggedValue" uid="33b0a56d-16b1-4327-9fc7-29d2641a3482"/>
+                      <ATTRIBUTES>
+                        <ATT name="Name"></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES>
+                        <LINK relation="Definition">
+                          <FOREIGNID name="JavaFinal" mc="Infrastructure.TagType" uid="eb8c1900-000a-b31d-0000-000000000000"/>
+                        </LINK>
+                      </DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
                 </DEPENDENCIES>
               </OBJECT>
             </COMP>
@@ -121,8 +147,9 @@
 IModuleContext ctx = module.getModuleContext();
 
 // TODO replace the following dumb code by the real implementation of the command
-MessageDialog.openInformation(Display.getDefault().getActiveShell(), "ExportCamelModelCommand", "Command not implemented!");]]></ATT>
-                  <ATT name="MimeType"></ATT>
+MessageDialog.openInformation(Display.getDefault().getActiveShell(), "ExportCamelModelCommand", "Command not implemented!");
+]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
                 </ATTRIBUTES>
@@ -171,6 +198,18 @@ MessageDialog.openInformation(Display.getDefault().getActiveShell(), "ExportCame
                   </LINK>
                   <COMP relation="Tag">
                     <OBJECT>
+                      <ID name="" mc="Infrastructure.TaggedValue" uid="85cbcb0b-8d88-4349-a3bb-76176488fdd1"/>
+                      <ATTRIBUTES>
+                        <ATT name="Name"></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES>
+                        <LINK relation="Definition">
+                          <FOREIGNID name="JavaFinal" mc="Infrastructure.TagType" uid="eb8c1900-000a-b31d-0000-000000000000"/>
+                        </LINK>
+                      </DEPENDENCIES>
+                    </OBJECT>
+                    <OBJECT>
                       <ID name="" mc="Infrastructure.TaggedValue" uid="70eab15b-ce3e-41fd-b4c3-57602fe0f121"/>
                       <ATTRIBUTES>
                         <ATT name="Name"></ATT>
@@ -215,6 +254,20 @@ MessageDialog.openInformation(Display.getDefault().getActiveShell(), "ExportCame
                   <LINK relation="Type">
                     <FOREIGNID name="IModule" mc="Standard.Interface" uid="01f40414-0000-32a9-0000-000000000000"/>
                   </LINK>
+                  <COMP relation="Tag">
+                    <OBJECT>
+                      <ID name="" mc="Infrastructure.TaggedValue" uid="dab7007c-fab7-42f1-918d-7604f0577c3b"/>
+                      <ATTRIBUTES>
+                        <ATT name="Name"></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES>
+                        <LINK relation="Definition">
+                          <FOREIGNID name="JavaFinal" mc="Infrastructure.TagType" uid="eb8c1900-000a-b31d-0000-000000000000"/>
+                        </LINK>
+                      </DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
                 </DEPENDENCIES>
               </OBJECT>
             </COMP>
@@ -260,7 +313,7 @@ MessageDialog.openInformation(Display.getDefault().getActiveShell(), "ExportCame
               <OBJECT>
                 <ID name="" mc="Infrastructure.Note" uid="badd998f-c846-4638-a94b-b00da8bdd631"/>
                 <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[return true;]]></ATT>
+                  <ATT name="Content"><![CDATA[return false;]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -274,11 +327,12 @@ MessageDialog.openInformation(Display.getDefault().getActiveShell(), "ExportCame
               <OBJECT>
                 <ID name="" mc="Infrastructure.Note" uid="dbf91ef1-d3fb-48d2-96ad-afdb94a20c2a"/>
                 <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[// Generated call to the super method will check the scope conditions defined in Studio.
-// DO NOT REMOVE this call unless you need to take full control on the checks to be carried out.
-// However you can safely extends the checked conditions by adding custom code.
-if (super.accept(selectedElements, module) == false) {
-    return false;
+                  <ATT name="Content"><![CDATA[if ((selectedElements != null) && (selectedElements.size() == 1)){
+    MObject selectedElement = selectedElements.get(0);
+    return (
+            ((selectedElement instanceof Class 
+                    && ((Class)selectedElement).isStereotyped(ICamelDesignerPeerModule.MODULE_NAME, CamelDesignerStereotypes.CAMEL_MODEL)
+                    )));
 }
 ]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -347,6 +401,58 @@ if (super.accept(selectedElements, module) == false) {
           <DEPENDENCIES>
             <LINK relation="ImportedElement">
               <FOREIGNID name="IModuleContext" mc="Standard.Interface" uid="1c5b0293-ca0a-46bd-8f4f-50f28749bcb0"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="" mc="Standard.ElementImport" uid="844c214e-65ce-42ee-9bc7-a80e89e6fbb0"/>
+          <ATTRIBUTES>
+            <ATT name="Visibility">Private</ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="ImportedElement">
+              <FOREIGNID name="Class" mc="Standard.Interface" uid="0002155c-c4bf-1fd8-97fe-001ec947cd2a"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="" mc="Standard.ElementImport" uid="af3e11ed-1099-4fd2-b8fb-3a70cc0ad41e"/>
+          <ATTRIBUTES>
+            <ATT name="Visibility">Private</ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="ImportedElement">
+              <FOREIGNID name="MObject" mc="Standard.Interface" uid="001dc7ac-a714-1f4f-9c13-001ec947cd2a"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="" mc="Standard.ElementImport" uid="eccf0fb5-886e-4fff-bccd-9d3f6f1f88c8"/>
+          <ATTRIBUTES>
+            <ATT name="Visibility">Private</ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="ImportedElement">
+              <ID name="CamelDesignerStereotypes" mc="Standard.Interface" uid="65df2a2c-06b3-4f3d-9b8f-9741e239875f"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="" mc="Standard.ElementImport" uid="13c54241-767b-440c-b8f6-1726c1237cc0"/>
+          <ATTRIBUTES>
+            <ATT name="Visibility">Private</ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="ImportedElement">
+              <ID name="ICamelDesignerPeerModule" mc="Standard.Interface" uid="f41f3406-c3d5-4a1c-bda3-d60fb2269b2c"/>
             </LINK>
           </DEPENDENCIES>
         </OBJECT>
